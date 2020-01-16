@@ -185,7 +185,7 @@ def insert_usuario():
                     pontos = 0
                     c.execute("""
                     INSERT INTO
-                          portifolio.usuarios
+                          usuarios
                              (nome,email,password,pontos)
                              VALUES
                               (%s,%s,%s,%s)""",
