@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <style>
+body {
+  width: 100vw;
+  height: 100vh;
+  background: #292929;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.memory {
+
+height:96%;
+
+}
+
+body .game {
+  width: 480px;
+  height: 240px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+body .card {
+  background: #ff8000;
+  border-radius: 5px;
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  position: relative;
+  overflow: hidden;
+  transition: -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+body .card:after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: white;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: visibility 0s, opacity 0s linear 0.1s;
+  transition-delay: 0.1s;
+
+}
+body .card[data-index='0']:after {
+  background-image: url("/transfer_images/cinderela_1.jpg")
+  ;
+}
+body .card[data-index='1']:after {
+  background-image: url("/transfer_images/moana_1.jpg");
+}
+body .card[data-index='2']:after {
+  background-image: url("/transfer_images/branca_neve_1.jpg");
+}
+body .card[data-index='3']:after {
+  background-image: url("/transfer_images/ariel_1.jpg");
+}
+body .card[data-index='4']:after {
+  background-image: url("/transfer_images/alice_1.jpg");
+}
+
+body .card[data-index='5']:after {
+  background-image: url("/transfer_images/jasmine_1.jpg");
+}
+body .card[data-index='6']:after {
+  background-image: url("/transfer_images/rapunzel_1.jpg");
+}
+body .card[data-index='7']:after {
+  background-image: url("/transfer_images/pequena_sereia_1.jpg");
+}
+body .card[data-active='true'] {
+  -webkit-transform: rotate3D(0, 1, 0, 180deg);
+          transform: rotate3D(0, 1, 0, 180deg);
+}
+body .card[data-active='true']:hover {
+  -webkit-transform: rotate3D(0, 1, 0, 180deg) scale(1.2);
+          transform: rotate3D(0, 1, 0, 180deg) scale(1.2);
+}
+body .card[data-active='true']:after {
+  visibility: visible;
+  opacity: 1;
+}
+body .card:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+body .resetButton,
+body .actions,
+body .timer {
+  font-size: 10px;
+  text-transform: uppercase;
+  color: #ecf0f1;
+  background: none;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}
+body .actions {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+body .timer {
+  left: unset;
+  right: 10px;
+}
+body .resultsContainer {
+  font-size: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #292929;
+  background: #ecf0f1;
+  padding: 30px 0;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 300px;
+  height: 200px;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -45%);
+          transform: translate(-50%, -45%);
+  transition: visibility 0s linear 0.5s, opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0s linear 0.5s, opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), visibility 0s linear 0.5s, opacity 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955), -webkit-transform 0.2s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+body .resultsContainer.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  transition-delay: 0s;
+}
+body .resultsContainer .actions,
+body .resultsContainer .timer {
+  font-size: 12px;
+  color: #292929;
+  position: static;
+}
+body .resultsContainer .resetButton {
+  color: #292929;
+  padding: 20px 0;
+  position: static;
+}
+
+
+  </style>
+  <body>
+<div class="container-fluid memory">
+<div class="game" id="game">
+    <div class="card" data-index="0" data-active="false"></div>
+    <div class="card" data-index="0" data-active="false"></div>
+    <div class="card" data-index="1" data-active="false"></div>
+  <div class="card" data-index="1" data-active="false"></div>
+  <div class="card" data-index="2" data-active="false"></div>
+  <div class="card" data-index="2" data-active="false"></div>
+  <div class="card" data-index="3" data-active="false"></div>
+  <div class="card" data-index="3" data-active="false"></div>
+  <div class="card" data-index="4" data-active="false"></div>
+  <div class="card" data-index="4" data-active="false"></div>
+  <div class="card" data-index="5" data-active="false"></div>
+  <div class="card" data-index="5" data-active="false"></div>
+   <div class="card" data-index="6" data-active="false"></div>
+  <div class="card" data-index="6" data-active="false"></div>
+   <div class="card" data-index="7" data-active="false"></div>
+  <div class="card" data-index="7" data-active="false"></div>
+
+
+</div>
+
+
+
+<p class="timer" id="timer">00:00</p>
+<p class="actions" id="actions">0 move</p>
+<button class="resetButton" id="resetButton">Reset game</button>
+<div class="resultsContainer" id="results">
+  <p>Congratulations</p>
+  <p>
+     You made it in
+    <span id='resultsActions' class='actions'>0</span>
+    moves and
+    <span id='resultsTimer' class='timer'>00:00</span>
+  </p>
+  <button class="resetButton">Reset game</button>
+  <p>🌚</p>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script>
+class Timer {
+  constructor( el ) {
+    this.el = el
+    this.timer = '00:00'
+  }
+
+  start() {
+    this.startTime = new Date()
+    this.interval = setInterval( () => {
+      this.update()
+    }, 100 )
+  }
+
+  pause() {
+    clearInterval( this.interval )
+  }
+
+  update() {
+    this.now = new Date()
+    const then = this.now.getTime() - this.startTime.getTime()
+
+    let seconds = Math.floor( then / 1000 ) % 60
+    seconds = ( seconds < 10 ? '0' : '' ) + seconds
+
+    let minutes = Math.floor( then / 1000 / 60 )
+    minutes = ( minutes < 10 ? '0' : '' ) + minutes
+
+    this.el.innerHTML = this.timer = `${minutes}:${seconds}`
+  }
+
+  reset() {
+    clearInterval( this.interval )
+    this.start()
+  }
+}
+
+class Card {
+  constructor( el ) {
+    this.el = el
+    this.index = el.dataset.index
+    this.active = false
+    this.matched = false
+  }
+
+  toggle() {
+    if( !this.matched ) {
+      this.active = !this.active
+      this.el.dataset.active = this.active.toString()
+    }
+  }
+}
+
+class Game {
+  constructor( container ) {
+    console.clear()
+
+    this.container = container
+
+    this.domCards = this.container.querySelectorAll( '.card' )
+    this.cards = []
+
+    for( let card of Array.from( this.domCards ) ) {
+      const item = new Card( card )
+      this.cards.push( item )
+    }
+
+    // Timer
+    const timerContainer = document.getElementById( 'timer' )
+    this.timer = new Timer( timerContainer )
+
+    // Actions
+    this.actions = 0
+    this.actionsContainer = document.getElementById( 'actions' )
+
+    this.resultsContainer = document.getElementById( 'results' )
+    this.resultsActions = document.getElementById( 'resultsActions' )
+    this.resultsTimer = document.getElementById( 'resultsTimer' )
+
+    this.pause = false
+
+    this.bind()
+    this.reset()
+  }
+
+  bind() {
+    for( let card of this.cards ) {
+      card.el.addEventListener( 'click', () => {
+        this.matchCards( card )
+      }, false )
+    }
+
+    const resetButtons = document.querySelectorAll( '.resetButton' )
+    for( let button of Array.from( resetButtons ) ) {
+      button.addEventListener( 'click', this.reset.bind( this ), false )
+    }
+  }
+
+  matchCards( clickedCard ) {
+    if( !this.pause ) {
+      // Check if there is already an active card
+      let activeAndNotMatchedCards = 0
+      for( let card of this.cards ) {
+        if( card.active == true && card.matched == false && card != clickedCard ) {
+          activeAndNotMatchedCards++
+          break
+        }
+      }
+
+      // If there is an active card
+      // Check if the active card and the clicked card are matching
+      if( activeAndNotMatchedCards != 0 ) {
+        for( let card of this.cards ) {
+          // If an active card matchs the clicked card
+          // Set both to matched and active
+          if( card.index == clickedCard.index && card.active == true && card != clickedCard ) {
+            clickedCard.toggle()
+            clickedCard.matched = true
+            card.matched = true
+
+          // Reset all active and not matched cards
+          } else {
+            this.pause = true
+            setTimeout( () => {
+              if( card.active == true && card != clickedCard ) {
+                card.toggle()
+                clickedCard.toggle()
+              }
+              this.pause = false
+            }, 500 )
+          }
+        }
+
+        // Add one action
+        this.actions++
+        this.actionsContainer.innerHTML = this.actions + ' moves'
+        clickedCard.toggle()
+
+      // If there is no active card
+      // And the clicked card is not already matched
+      // Toggle the clicked card
+      } else {
+        if( clickedCard.matched == false ) {
+          clickedCard.toggle()
+        }
+      }
+    }
+
+    this.checkEnd()
+  }
+
+  checkEnd() {
+    let over = true
+    for( let card of this.cards ) {
+      if( !card.matched ) {
+        over = false
+      }
+    }
+
+    if( over ) {
+      this.resultsContainer.classList.add( 'show' )
+      this.timer.pause()
+      this.resultsActions.innerHTML = this.actions
+      this.resultsTimer.innerHTML = this.timer.timer
+    }
+  }
+
+  reset() {
+    for( let card of this.cards ) {
+      card.matched = false
+      if( card.active ) {
+        card.toggle()
+      }
+    }
+
+    setTimeout( () => {
+      for( let card of this.cards ) {
+        card.el.style.order = Math.floor( Math.random() * 1000 )
+      }
+
+      // Reset the timer
+      this.timer.reset()
+
+      // Reset the action counter
+      this.actions = 0
+      this.actionsContainer.innerHTML = this.actions + ' move'
+
+      this.resultsContainer.classList.remove( 'show' )
+    }, 200 )
+  }
+}
+
+const container = document.getElementById( 'game' )
+const experience = new Game( container )
+
+  </script>
+
+
+  </body>
+</html>

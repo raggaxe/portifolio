@@ -1,0 +1,72 @@
+{% extends "header.html" %}
+
+{% block body %}
+<style>
+
+
+
+
+
+
+    section {
+     display: block;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+   height:100vh;
+    width: 100vw;
+
+
+  /* Scroll Snap */
+  scroll-snap-align: center;
+
+}
+
+</style>
+<div class="primeiro">
+{% include 'home.html' %}
+    </div>
+<div class="segundo">
+{% include 'profile.html' %}
+</div>
+<div class="terceiro">
+{% include 'portifolio.html' %}
+</div>
+<div class="quarto">
+{% include 'contact.html' %}
+</div>
+<script>
+$("#downpage_1").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".segundo").offset().top},
+        'slow');
+});
+
+
+$("#downpage").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".terceiro").offset().top},
+        'slow');
+});
+
+$("#downpage_2").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".quarto").offset().top},
+        'slow');
+});
+
+$("#downpage_3").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".primeiro").offset().top},
+        'slow');
+});
+
+
+</script>
+{% endblock %}
+
+
+
+
+
+

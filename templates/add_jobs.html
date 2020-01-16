@@ -1,0 +1,1074 @@
+
+{% extends "hadmin.html" %}
+{% block body %}
+<style>
+td, tr {
+text-align: center;
+color:whitesmoke;
+font-family:"raleway";
+vertical-align:middle;
+}
+.btn {
+  justify-content: center;
+  text-align: center;
+}
+.modal-body{
+text-size:10px;
+}
+
+.tooltip{
+position:absolute;
+
+ }
+
+
+    .tooltip-inner {
+min-width: 400px;
+  margin: 0 auto;
+  border: 3px solid #999;
+    /* If max-width does not work, try using width instead */
+    font-size:12px;
+}
+
+#tooltip strong{
+    padding:20px;
+    text-align:left;
+    color:#04C2C9;
+     font-size:14px;
+}
+
+
+
+
+
+
+
+    .back {
+    width:160px;
+    height:120px;
+    background:black;
+    opacity:0.77;
+    }
+    .detail {
+    height:100%;
+    width:200px;
+    color:whitesmoke;
+    background:blue;
+    }
+    .labeltable{
+    margin:0 auto;
+    text-align: center;
+      justify-content: center;
+      padding:35px;
+    }
+
+
+
+
+
+
+
+
+* { box-sizing:border-box; }
+
+/* basic stylings ------------------------------------------ */
+body 				 { font-family:'Raleway'; }
+
+h2 		 {
+  text-align:center;
+  margin-bottom:50px;
+
+}
+h2 small {
+  font-weight:normal;
+  color:#888;
+  display:block;
+}
+.footer 	{ text-align:center; }
+.footer a  { color:#53B2C8; }
+
+/* form starting stylings ------------------------------- */
+.group 			  {
+  position:relative;
+  margin-bottom:22px;
+  display:block;
+  letter-spacing: 3px;
+
+}
+input 				{
+
+  padding:3px 0px 0px 0px;
+  display:block;
+  width:100%;
+  border:none;
+  margin:0 auto;
+  border-bottom:1px solid #757575;
+  background: black;
+  opacity:0.88;
+  color:white;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+input:focus 		{ outline:none;
+ text-transform: uppercase;
+
+ }
+
+ ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color:#04C2C9;
+
+  font-weight:normal;
+   letter-spacing: 2px;
+  opacity: 1; /* Firefox */
+}
+
+#basic-url2 {
+padding:8px 8px 9px 5px;
+font-size:10px;
+  display:block;
+  border:none;
+  margin:0 auto;
+  border-bottom:1px solid #757575;
+  background: black;
+  opacity:0.88;
+text-decoration:none;
+  font-weight:normal;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+      outline:none;}
+
+
+
+
+
+ #basic-url {
+
+  padding:10px 10px 10px 5px;
+  display:block;
+  border:none;
+  margin:0 auto;
+  border-bottom:1px solid #757575;
+  background: black;
+  opacity:0.88;
+text-decoration:none;
+  font-weight:normal;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+ }
+
+ #basic-url::placeholder{
+  font: bold 0.8em/100% Raleway;
+   color:#999;}
+
+    #basic-url   {
+    color:white;
+    }
+ #basic-url2::placeholder{
+  font: bold 0.8em/100% Raleway;
+   color:#999;}
+
+#basic-addon4 {
+ background:black;
+border:none;
+ color:#04C2C9;
+  font: bold 0.8em/100% Raleway;
+}
+
+#basic-addon3 {
+ background:black;
+border:none;
+ color:#04C2C9;
+  font: bold 0.8em/100% Raleway;
+}
+ .input-group-text input{
+  color:#04C2C9;
+  font: bold 0.8em/100% Raleway;
+ }
+
+/* LABEL ======================================= */
+label 				 {
+
+  position:absolute;
+  pointer-events:none;
+  left:0px;
+  top:10px;
+     text-transform: uppercase;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+
+/* active state */
+input:focus ~ label, input:valid ~ label 		{
+  top:-10px;
+  font-size:12px;
+color:#04C2C9;
+}
+
+/* BOTTOM BARS ================================= */
+.bar 	{ position:relative; display:block; width:300px; }
+.bar:before, .bar:after 	{
+  content:'';
+  height:2px;
+  width:0;
+  bottom:1px;
+  position:absolute;
+  background:#04C2C9;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+}
+.bar:before {
+  left:53%;
+}
+.bar:after {
+  right:0;
+}
+
+/* active state */
+input:focus ~ .bar:before, input:focus ~ .bar:after {
+  width:100%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position:absolute;
+  height:60%;
+  width:100px;
+  top:25%;
+  left:0;
+  pointer-events:none;
+  opacity:0.5;
+}
+
+/* active state */
+input:focus ~ .highlight {
+  -webkit-animation:inputHighlighter 0.3s ease;
+  -moz-animation:inputHighlighter 0.3s ease;
+  animation:inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+@-webkit-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@-moz-keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+@keyframes inputHighlighter {
+	from { background:#5264AE; }
+  to 	{ width:0; background:transparent; }
+}
+
+#modallogin{
+width: 100%;
+margin:0 auto;
+background:none;
+border-top: 4px solid #04C2C9;
+margin-top:-15px;
+}
+
+
+#modal-br {
+width: 100%;
+margin-top:-20px;
+background:none;
+border-top: 4px solid #04C2C9;
+
+
+
+}
+
+#br {
+position:relative;
+background: rgba(0, 0, 0, 0.94);
+padding:20px;
+
+}
+#modalloginbody{
+background: rgba(0, 0, 0, 0.94);
+padding: 0 40px 30px 40px;
+
+}
+
+
+
+#submit,
+ #submit2{
+border: 2px solid #04C2C9;
+ font: bold 1.0em/100% Raleway;
+width:100%;
+color: whitesmoke;
+ text-transform: uppercase;
+ padding:25px;
+
+}
+
+#fechar_modal
+{
+margin:0 auto:
+padding:45px;
+ font: bold 0.8em/100% Raleway;
+ position:relative;
+ top:20px;
+width:100%;
+ text-transform: uppercase;
+}
+
+ #fechar_modal2 {
+ margin:0 auto:
+padding:45px;
+ font: bold 0.8em/100% Raleway;
+ position:relative;
+width:100%;
+ text-transform: uppercase;
+ }
+
+
+#xar {
+color:white;
+opacity:0.5;}
+
+#browse-click,
+#browse-click2{
+ font: bold 0.8em/100% Raleway;
+}
+
+#images {
+font-size:39px;
+z-index:99999;
+margin-top:-19px;
+left:4px;
+position:absolute;
+color:#04C2C9;
+}
+
+#images2 {
+font-size:39px;
+z-index:99999;
+margin-top:-19px;
+left:20px;
+position:absolute;
+color:#04C2C9;
+}
+
+
+
+#browse-click,
+#browse-click2{
+width:86%;
+color:white;
+color:#999;
+text-align:left;
+margin:0 63px auto;
+}
+
+
+
+.job{
+position:relative;
+display:block;
+padding:20px;
+top:0px;
+margin-left:50%;
+background:#04C2C9;
+width:50%;
+font: bold 1.2em/100% Raleway;
+color:white;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.4);
+box-shadow: 0 0 1px rgba(255, 255, 255, 0.1), 0 2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.job2{
+position:relative;
+display:block;
+padding:10px;
+top:0px;
+font-size:10px;
+
+background:#04C2C9;
+
+font: bold 0.8em/100% Raleway;
+color:white;
+}
+
+
+
+
+
+
+
+
+
+
+#categorias_insert,
+#status_insert ,
+#categorias_edit,
+#status_edit{
+background:black;
+position:absolute;
+border:none;
+
+}
+
+#status_insert {
+padding:25px;
+
+margin-top:15px;
+}
+
+
+
+.input-group-text{
+position:relative;
+background:black;
+}
+
+
+.select-styled{
+color:#04C2C9;
+font: bold 0.8em/100% Raleway;
+
+}
+ul.select-options{
+  list-style-type: none;
+  padding:30px;
+}
+
+
+select-options:visited {
+ color:green;
+ pointer-events: none;
+ cursor: default;
+}
+
+ul.select-options li{
+ color:#999;
+  font: bold 0.8em/100% Raleway;
+  padding:4px;
+}
+
+
+ul.select-options li:hover{
+ color:white;
+  font: bold 0.8em/100% Raleway;
+  padding:3px;
+}
+
+
+
+.titulo{
+height:200px;
+min-width:200px;
+background:none;
+display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.wrap {
+max-height: 97vh;
+}
+
+
+.taste:hover {
+  color: white;
+}
+
+.vjr {
+position:relative:
+
+}
+
+
+
+.taste a {
+margin: 0 auto;
+padding:20px;;
+}
+
+.taste i {
+font-size:
+text-decoration: none;
+    color: #999;
+    font-size:32px;
+    outline: none;}
+
+#title {
+font: bold 1.4em/100% Raleway;
+}
+#subtitle {
+color:#04C2C9;
+
+}
+.list-unstyled{
+margin-top:10px;
+font: bold 1.2em/100% Raleway;
+}
+.list-unstyled li{
+padding:2px;
+}
+
+@media screen and (max-width: 480px){
+
+
+			td img{ display: block; margin: 0; width: 100%; min-width: none; }
+
+		}
+
+		img{ max-width: 200px; height: auto; width: auto\\9; /* ie8 */ }
+
+
+
+#file-name,
+ #file-name2 {
+margin: 0 auto;
+color:#04C2C9;
+font-size:13px;
+margin-top:14px;
+}
+.fixed {
+right:0 ;
+width:240px;
+height:60px;
+position :fixed;
+background: rgba(0, 10, 0, 0.75);
+top:0;
+color:#04C2C9;
+border: 2px solid #04C2C9;
+outline:none;
+text-decoration:none;
+}
+.new{
+position:relative;
+left:30px;
+top:0px;
+}
+
+.edit_button {
+font-size:36px;
+position:relative;
+}
+.flex {
+padding-top:18px;}
+.anexo {
+padding:14px;
+}
+.anexo2 {
+padding:14px;
+}
+
+#edit_text {
+position:relative;
+margin-top:-23px;
+right:0;
+margin-bottom:25px;
+background:none;
+border: 2px solid #04C2C9;
+}
+*:focus {
+    outline: none;
+}
+.wrapper {
+background:none;
+margin-left:-20px;
+}
+#mec,
+ #static{
+color:white;
+position:absolute;
+margin-top:-10px;
+cursor:pointer;
+font-size:12px;
+}
+
+.change {
+text-align:center;
+margin:0 auto;
+width:200px;
+font-size:11px;
+padding-left:20px;
+}
+.change p {
+color: white;
+
+}
+
+
+#caixa_status,
+#caixa_categoria {
+margin-top:-8px;
+
+}
+
+.change_buttom {
+padding:9px;
+position:absolute;
+color:white;
+left:0;
+top:25px;
+background:none;
+border: 2px solid white;
+font-size:10px;
+  letter-spacing: 10px;
+}
+
+.change img {
+height: 80px;}
+
+#link-edit {
+margin-top:-10px;
+margin-left:-10px;
+}
+</style>
+
+{% if session.admin %}
+
+<div class="wrap">
+    <div class="row">
+        <div class="col md-12">
+            <!--MESSAGE FLASK -->
+            {%with messages = get_flashed_messages()%} {%if messages%} {% for message in messages %}
+            <div class="alert alert-success alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label ="close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+                {{message}}
+            </div>{%endfor%} {%endif%} {%endwith%}
+            <button type="button" class="fixed" data-toggle="modal" data-target="#myModal">+ Add Novo</button>
+             <!-- TABLE -->
+            <table class="table" >{% for row in students %}
+               <tbody>
+                <tr>
+                     <!-- COLUNA FOTO -->
+                    <td id="pt" style="cursor: pointer; vertical-align: middle;" >
+                        <img  src="{{ url_for('memory_images', filename=row[8]) }}"   alt="Card image cap" >
+                    </td>
+                    <!-- COLUNA TITULO -->
+                    <td>
+                        <div class="titulo">
+                            <div id="vjr">
+                                <a id="title">{{row.1}}</a>
+                            </div>
+                            <div>
+                                <a id="subtitle">{{row.2}}</a>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- COLUNA DETALHES -->
+                    <td style=" vertical-align: middle;">
+                        <div style="margin:0 auto;" class="text_detail">
+                            <div class="row taste">
+                                <a>{{row.3}}</a>
+                            </div>
+                        </div>
+                    </td>
+                    <!-- COLUNA BOTOES -->
+                    <td style=" vertical-align: middle;">
+                        <div style="margin:0 auto;" class="text_detail">
+                            <div class="row taste">
+                                 <a href="/update_jobs/{{row.0}}"  data-toggle="modal" data-target="#modaledit{{row.0}}"><i class="fas fa-tools"></i></a>
+                                 <a href="/delete_jobs/{{ row.0 }}"  onclick="return confirm('Are You Sure For Delete?')"><i class="far fa-trash-alt"></i></a>
+                                 <a href="#"   class="tip" data-tip="modaltooltip{{row.0}}" data-placement="left" ><i class="fas fa-plus"></i></a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+               </tbody>{% endfor  %}
+            </table>
+             <!-- end TABLE -->
+        </div>
+    </div>
+</div>
+
+
+
+ <!-- MODAL ADD JOBS -->
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div  id="modallogin" class="modal-content">
+                 <div id="modalloginbody" class="modal-body">
+                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                     <div class="login-card">
+                         <h2 class="job">ADD JOB</h2>
+                         <form id="pay" action="{{ url_for('insert_jobs') }}" method="POST" enctype="multipart/form-data">
+                             <!-- CLIENTE -->
+                             <div class="group">
+                                 <input type="text" value="{{request.form.cliente}}" name="cliente" autocomplete="off">
+                                 <span class="highlight"></span>
+                                 <span class="bar"></span>
+                                 <label>CLIENTE</label>
+                             </div>
+                             <!-- NOME -->
+                             <div class="group">
+                                 <input type="text" value="{{request.form.nome}}" name="nome" autocomplete="off">
+                                 <span class="highlight"></span>
+                                 <span class="bar"></span>
+                                 <label>NOME DO PROJETO</label>
+                             </div>
+                             <!-- DESCRICAO -->
+                             <div class="group">
+                                 <input type="text" value="{{request.form.descricao}}" name="descricao" autocomplete="off">
+                                 <span class="highlight"></span>
+                                 <span class="bar"></span>
+                                 <label>DESCRICAO</label>
+                             </div>
+                             <!-- LINGUAGEM -->
+                             <div class="group">
+                                 <input type="text" value="{{request.form.linguagem}}" name="linguagem" autocomplete="off">
+                                 <span class="highlight"></span>
+                                 <span class="bar"></span>
+                                 <label>LINGUAGEM USADA</label>
+                             </div>
+                             <!-- DATAS -->
+                             <div class="row">
+                                 <div class="col">
+                                     <div class="group">
+                                         <input onfocus="(this.type='date')" value="{{request.form.entrada}}" name="entrada" class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
+                                     </div>
+                                 </div>
+                                 <div class="col">
+                                     <div class="group">
+                                         <input onfocus="(this.type='date')" value="{{request.form.prazo}}" name="prazo" autocomplete="off" class="js-form-control" placeholder="PRAZO LIMITE"></div>
+                                 </div>
+                             </div>
+                             <!-- LINK -->
+                             <div class="group">
+                                 <div class="input-group mb-3">
+                                     <div class="input-group-prepend">
+                                         <span class="input-group-text" id="basic-addon3">https://</span>
+                                     </div>
+                                     <input type="text" class="form-control" id="basic-url" autocomplete="off" aria-describedby="basic-addon3" value="{{request.form.link}}" name="link" placeholder="Link para acesso">
+                                 </div>
+                             </div>
+                             <!-- STATUS -->
+                             <div class="group">
+                                  <div class="row">
+                                        <div class="col-md-auto">
+                                            <div class="job2">
+                                                STATUS:
+                                            </div>
+                                        </div>
+                                      <div class="col">
+                                          <div class="container-fluid flex">
+                                              <select style="z-index:-9999;" class="select" id="status_insert">
+                                                  <option selected>INSERIR STATUS...</option>
+                                                  <option value="ENTRADA">ENTRADA</option>
+                                                  <option value="REVISÃO">EM REVISÃO</option>
+                                                  <option value="APROVADO">APROVADO</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                             <!-- CATEGORIA -->
+                             <div id="categoria_add" class="group">
+                                  <div class="row">
+                                        <div class="col-md-auto">
+                                            <div class="job2">
+                                                <a>CATEGORIA:</a>
+                                            </div>
+                                        </div>
+                                      <div class="col">
+                                          <div class="container-fluid flex">
+                                              <select style="z-index:-9999;" class="select" id="categorias_insert">
+                                                  <option selected>SELECIONE...</option>
+                                                  <option value="WEB">WEB</option>
+                                                  <option value="FILME">FILME</option>
+                                                  <option value="AUDIO">AUDIO</option>
+                                                  <option value="LOGOMARCA">LOGOMARCA</option>
+                                                  <option value="ESTAMPAS">ESTAMPAS</option>
+                                                  <option value="BOTS">BOTS</option>
+                                                  <option value="PUBLICIDADE">PUBLICIDADE</option>
+                                                  <option value="PYTHON">PYTHON</option>
+                                              </select>
+                                          </div>
+                                      </div>
+                                  </div>
+                             </div>
+                             <!-- FOTO -->
+                             <div class="group ">
+                                 <div class="container-fluid anexo">
+                              <!-- filename to display to the user -->
+                                 <!-- Hide this from the users view with css display:none; -->
+                                 <input style="display:none; " id="file-type" type="file" size="4" name="file"/>
+                                 <!-- Style this button with type image or css whatever you wish -->
+                                 <span id="images"><i class="fas fa-images"></i></span><input id="browse-click" type="button" class="button" value="ANEXAR ARQUIVO"/>
+                                 <!-- submit button -->
+                                     <p id="file-name" class="margin-10 bold-10"></p>
+                                 </div>
+                             </div>
+                             <!-- HIDDEN INPUTS -->
+                             <div id="hidden_tags" class="hidden_tags"></div>
+                             <!-- SUBMIT -->
+                             <div class="form-group">
+                                 <button class="btn" id="submit" type="submit">REGISTRAR NOVO JOB</button>
+                                 <button type="button" id="fechar_modal" class="btn btn-default" data-dismiss="modal"><a id="xar">FECHAR  X</a></button>
+                             </div>
+                         </form>
+                     </div>
+                 </div>
+            </div>
+        </div>
+      </div>
+ <!-- MODAL EDIT JOBS -->
+{% for row in students %}
+<div id="modaledit{{row.0}}" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div id="modal-br" class="modal-content">
+            <div id="br" class="modal-body">
+                <h2 id="edit_text" class="job">EDITAR REGISTRO</h2>
+                <form id=edit_jobs" action="{{ url_for('update_jobs') }}" method="POST" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="{{row[0]}}">
+                    <!-- CLIENTE -->
+                    <div class="group">
+                        <input type="text" name="cliente"  autocomplete="off" value="{{row.1}}">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>CLIENTE</label>
+
+                    </div>
+                    <!-- NOME -->
+                    <div class="group">
+                        <input   type="text" name="nome" autocomplete="off" value="{{row.2}}">
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Nome do Projeto</label>
+                    </div>
+                    <!-- DESCRICAO -->
+                    <div class="group">
+                        <input type="text" name="descricao" autocomplete="off" value="{{row.3}}" >
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label >Descrição do Projeto</label>
+                    </div>
+                    <!-- LINGUAGEM -->
+                    <div class="group">
+                        <input type="text" name="linguagem" autocomplete="off" value="{{row.4}}" >
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label >Linguagem Usada</label>
+                    </div>
+                    <!-- DATAS -->
+                    <div class="row">
+                        <div class="col">
+                            <div class="group">
+                                <input onfocus="(this.type='date')" value="{{row.5}}" name="entrada" class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
+                                <label >Data de Entrada</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="group">
+                                <input onfocus="(this.type='date')" value="{{row.6}}" name="prazo" class="js-form-control" autocomplete="off" placeholder="PRAZO LIMITE">
+                                <label >Data de Entrada</label>
+                            </div>
+                             </div>
+                    </div>
+                     <!-- LINK -->
+                    <div id="link-edit" class="group">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon4">https://</span>
+                            </div>
+                            <input type="text" class="form-control" id="basic-url2" autocomplete="off"  value="{{row.7}}" aria-describedby="basic-addon3" name="link" placeholder="Link para acesso">
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <!-- STATUS -->
+                        <div class="col">
+                            <div class="group">
+                                <input type="text" name="status" autocomplete="off" value="{{row.11}}">
+                                 <label >STATUS</label>
+                            </div>
+                        </div>
+                        <!-- CATEGORIA -->
+                        <div class="col">
+                            <div class="group">
+                               <input type="text" name="categoria" autocomplete="off" value="{{row.10}}">
+                                   <label>CATEGORIA</label>
+                            </div>
+                             </div>
+                    </div>
+
+                    <!-- FOTO -->
+                      <div class="group">
+        <label for="file">Anexar Foto : </label>
+ <input type="file" id="file" name="file" multiple>
+</div>
+
+                    <!-- SUBMIT -->
+                    <div class="form-group">
+                        <button  id="submit2" class="btn submit" type="submit">Editar Informacoes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+ <!-- MODAL TOOLTIPS -->
+<div id="modaltooltip{{row.0}}" class="modal fade teste" role="dialog">
+                    <div id="tooltip" >
+                        <ul class="list-unstyled">
+                            <li>ENTRADA : <strong>{{row[5]}}</strong></li>
+                            <li>PRAZO: <strong>{{row[6]}}</strong></li>
+                            <li>CATEGORIA: <strong>{{row[10]}}</strong></li>
+                            <li>ATUALIZADO EM: <strong>{{row[9]}}</strong></li>
+
+                        </ul>
+                     </div>
+                </div>
+{% endfor  %}
+
+<link rel="stylesheet" href=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src=
+"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <script src=
+"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+    </script>
+    <script src=
+"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+    </script>
+        <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+<script>
+    $(document).ready(function(){
+	 $('[data-toggle="popover"]').popover({
+          //trigger: 'focus',
+		  trigger: 'hover',
+          html: true,
+          content: function () {
+				return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
+          },
+          title: 'Toolbox'
+    })
+});
+ $(document).ready(function () {
+        // Tooltips
+        $('.tip').each(function () {
+            $(this).tooltip(
+            {
+                html: true,
+                title: $('#' + $(this).data('tip')).html()
+            });
+        });
+    });
+
+
+ $(document).ready(function () {
+
+    var intervalFunc = function () {
+        $('#file-name').html($('#file-type').val());
+    };
+
+    $('#browse-click').on('click', function () { // use .live() for older versions of jQuery
+        $('#file-type').click();
+        setInterval(intervalFunc, 1);
+        return false;
+    });
+});
+
+
+$(document).ready(function () {
+
+    var intervalFunc = function () {
+        $('#file-name2').html($('#file-type2').val());
+    };
+
+    $('#browse-click2').on('click', function () { // use .live() for older versions of jQuery
+        $('#file-type2').click();
+        setInterval(intervalFunc, 1);
+        return false;
+    });
+});
+
+
+
+/*
+Reference: http://jsfiddle.net/BB3JK/47/
+*/
+
+$('select').each(function(){
+    var id = this.id;
+    var $this = $(this), numberOfOptions = $(this).children('option').length;
+    $this.addClass('select-hidden');
+
+    $this.wrap('<div class="select"></div>');
+    $this.after('<div class="select-styled"></div>');
+
+    var $styledSelect = $this.next('div.select-styled');
+    $styledSelect.text($this.children('option').eq(0).text());
+
+    var $list = $('<ul />', {
+        'class': 'select-options'
+    }).insertAfter($styledSelect);
+    for (var i = 1; i < numberOfOptions; i++) {
+        $('<li />', {
+            text: $this.children('option').eq(i).text(),
+            rel: $this.children('option').eq(i).val()
+        }).appendTo($list);
+    }
+    var $listItems = $list.children('li');
+    $styledSelect.click(function(e) {
+        e.stopPropagation();
+        $('div.select-styled.active').not(this).each(function(){
+            $(this).removeClass('active').next('ul.select-options').hide();
+            });
+        $(this).toggleClass('active').next('ul.select-options').toggle();
+        });
+    $listItems.click(function(e) {
+        e.stopPropagation();
+        $styledSelect.text($(this).text()).removeClass('active');
+        $this.val($(this).attr('rel'));
+        $list.hide();
+        var input = document.createElement("input");
+        input.setAttribute('type', 'hidden');
+        input.setAttribute('id', id);
+        input.setAttribute('name', id);
+        input.setAttribute('value', $this.val());
+        var parent = document.getElementById("hidden_tags");
+        parent.appendChild(input);
+        console.log(input);
+    });
+    $(document).click(function() {
+        $styledSelect.removeClass('active');
+        $list.hide();
+
+    });
+});
+
+
+
+
+
+
+</script>
+
+
+{% else %}
+<p>Area resrita para Admininstardor</p>
+{% endif %}
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+

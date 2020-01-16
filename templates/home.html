@@ -1,0 +1,284 @@
+
+
+{% block body %}
+<style>
+
+.full-width-img {
+  background: url('https://justcreative.com/wp-content/uploads/2018/07/image1-1000x563.jpg') no-repeat center center;
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:800px;
+
+
+
+}
+.box {
+background: rgba(0, 0, 0, 0.7);
+position: absolute;
+text-align: center;
+height: 100%;
+min-height:800px;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+}
+
+
+.home {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    width:87%;
+
+}
+
+#title{font: bold 1.4em/80% Raleway;
+text-shadow: 2px 2px rgba(0,0,0,0.34);}
+#title-name {
+
+color:#E31B6D;
+font: bold 1.4em/80% Raleway;
+text-shadow: 2px 2px rgba(0,0,0,0.34);
+}
+
+.home h1{
+
+font: bold 13vw/86% Raleway;
+color:#04C2C9;
+padding-bottom:17px;
+margin: 0 auto;
+text-shadow: 3px 3px rgba(0,0,0,0.34);
+padding-top:10px;
+
+
+
+
+
+}
+.home h4 {
+font: bold 2vw/80% Raleway;
+
+}
+#span {
+position: relative;
+background:#E31B6D;
+top:50px;
+padding:17px;
+opacity:0.88;
+
+border-bottom-left-radius: 12px;
+    border-top-right-radius: 12px;
+    box-shadow: 3px 3px rgba(0,0,0,0.34);
+
+}
+#as,#as2 {
+color:#04C2C9;
+}
+#msg {
+font: bold 0.8em/80% Raleway;
+}
+
+
+
+.xt{
+position:relative;
+top: 170px;
+left:46%;
+
+
+}
+
+
+
+
+
+@media (max-width: 740px) {
+.home h1{
+font-size:16vw;
+}
+#title,
+#title-name{font: bold 1.1em/80% Raleway;}
+
+.home h4 {
+font-size:4vw;
+}
+
+#span{
+font-size:3vw;
+}
+
+}
+
+
+#downpage_1{
+position:relative;
+width:60px;
+background:none;
+cursor:pointer;
+margin:0 auto;
+margin-top:670px;
+
+-webkit-animation: downarrow 0.5s ease-in-out infinite;
+			animation: downarrow 0.5s ease-in-out infinite;
+
+}
+
+
+#downpage_1 a {
+color:white;
+font-size:36px;
+
+}
+
+
+
+
+
+@-webkit-keyframes downarrow {
+0% {transform: translateY(0px)}
+50%  {transform: translateY(20px)}
+100%  {transform: translateY(0px)}
+}
+
+
+#mouse-scroll {
+  style: block;
+}
+#mouse-scroll {
+
+  position: absolute;
+
+
+  bottom : 0px;
+  -webkit-transform: translateX(-50%);
+  z-index: 9999;
+}
+#mouse-scroll span{
+  display: block;
+  width: 25px;
+  height: 25px;
+  -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+       transform: rotate(45deg);
+       transform: rotate(45deg);
+  border-right: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  margin: 0 0 3px 5px;
+}
+#mouse-scroll .mouse {
+  height: 21px;
+  width: 14px;
+  border-radius: 10px;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+  border: 2px solid #E31B6D
+}
+#mouse-scroll .down-arrow-1 {
+  margin-top: 6px;
+}
+#mouse-scroll .down-arrow-1, #mouse-scroll .down-arrow-2, #mouse-scroll .down-arrow-3 {
+  -webkit-animation: mouse-scroll 1s infinite;
+    -moz-animation: mouse-scroll 1s infinite:
+}
+#mouse-croll .down-arrow-1 {
+   -webkit-animation-delay: .1s;
+   -moz-animation-delay: .1s;
+   -webkit-animation-direction: alternate;
+}
+#mouse-scroll .down-arrow-2 {
+  -webkit-animation-delay: .2s;
+  -moz-animation-delay: .2s;
+  -webkit-animation-direction: alternate;
+}
+#mouse-scroll .down-arrow-3 {
+   -webkit-animation-delay: .3s;
+   -moz-animation-dekay: .3s;
+   -webkit-animation-direction: alternate;
+}
+#mouse-scroll .mouse-in {
+  height: 5px;
+  width: 2px;
+  display: block;
+  margin: 5px auto;
+  background: #ffffff;
+  position: relative;
+}
+#mouse-scroll .mouse-in {
+ -webkit-animation: animated-mouse 1.2s ease infinite;
+  moz-animation: mouse-animated 1.2s ease infinite;
+}
+
+@-webkit-keyframes animated-mouse {
+  0% {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+  }
+  100% {
+     opacity: 0;
+    -webkit-transform: translateY(6px);
+    -ms-transform: translateY(6px);
+    transform: translateY(6px);
+  }
+}
+@-webkit-keyframes mouse-scroll {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes mouse-scroll {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
+</style>
+<section class="container-fluid full-width-img">
+        <div class="box">
+        <div class=" container-fluid home">
+            <a id="title"> Olá! Eu sou</a><a id="title-name"> Rafael Almeida!</a>
+            <h1>WEB DESIGNER</h1>
+            <h4>Estudante full stack web developer </h4>
+            <span id="span">
+                <a id="as">({</a>
+                <a id="msg">CORES, TRAÇOS, FORMAS E CÓDIGOS ME FASCINAM</a>
+                <a id="as2">})</a>
+            </span>
+            </div>
+             <div id="downpage_1">
+          <a >
+             <i class="fas fa-angle-double-down"></i>
+          </a>
+              </div>
+        </div>
+
+</section>
+
+{% endblock %}
+
+
+
+
+

@@ -1,0 +1,10 @@
+{% extends "hadmin.html" %}
+{% block body %}
+
+{% if session.admin %}
+ {% include "dashbox.html" %}
+{% else %}
+    <p>Area resrita para Admininstardor</p>
+{% endif %}
+</html>
+{% endblock %}

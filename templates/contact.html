@@ -1,0 +1,158 @@
+{% block body %}
+
+<style>
+    .section-contato{
+background:#404040;
+color:white;
+font: bold Raleway;
+height:100vh;
+    width: 100vw;
+}
+
+
+
+#contato_box {
+display:block;
+position:relative;
+width:90%;
+max-width:460px;
+}
+
+#contato_box  h4{
+position:relative;
+font: bold 3.7em/130% Raleway;
+padding-top:80px;
+}
+
+
+
+.subline p{
+color:#04C2C9;
+font: bold 0.7em/100% Raleway;
+
+}
+
+
+.icones{
+position:relative;
+margin-top:40px;
+}
+
+.icones i{
+font-size:29pt;
+ margin: 20px auto;
+ margin-bottom:19px;
+ color:#888888;
+ cursor:pointer;
+
+}
+
+#contact-form {
+font-size:12px;
+
+}
+
+
+
+#myTextarea {
+
+width: 300px;
+  min-height: 17px;
+  border: 1px solid #ccc;
+  max-height: 150px;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width:100%;
+  }
+
+
+  #myTextarea:focus{
+  background:#404040;
+  color:white;
+  outline: none;
+  }
+
+
+*:focus {
+    outline: none;
+}
+
+
+#contact-form {
+min-width: 300px;
+margin: 0 auto;
+width:400px
+margin-top:65px;
+}
+
+
+
+
+#downpage_3{
+position:relative;
+width:60px;
+background:none;
+cursor:pointer;
+margin:0 auto;
+margin-top:-10px;
+
+-webkit-animation: downarrow 0.5s ease-in-out infinite;
+			animation: downarrow 0.5s ease-in-out infinite;
+
+}
+
+
+#downpage_3 a {
+color:white;
+font-size:36px;
+
+}
+
+</style>
+<section  class="section-contato">
+    <div id="contato_box" class="container-fluid">
+        <h4 id="conts">CONTATOS</h4>
+        <div id="subline" class="subline">
+            <p>Tem alguma pergunta ou vamos trabalhar juntos?</p>
+        </div>
+
+    <!-- Login (giriş) Form Sayfası -->
+                <form action="{{ url_for('mensagem') }}" id="contact-form" method="post">
+                    <div  class="group">
+                        <input type="text" name="nome" autocomplete="off" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label><i class="fas fa-user"></i><span class="span-input">NOME COMPLETO</span></label>
+                    </div>
+        <!-- #Kullanıcı Adı Giriş İnput Bitiş -->
+        <!-- Şifre İnput Giriş-->
+                    <div class="group">
+                        <input type="text" name="email"  autocomplete="off" required>
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label><i class="fas fa-phone"></i><span class="span-input">E-MAIL ou TELEMÓVEL</span></label>
+                    </div>
+                    <div class="group">
+                        <label for="myTextarea"></label>
+                        <textarea  id="myTextarea"  name="mensagem" placeholder="Escreva sua mensagem..." rows="7"></textarea>
+                    </div>
+         <!-- Giriş Yap Buton -->
+                    <button type="submit" class="giris-yap-buton">ENVIAR</button>
+                    <div class="row icones">
+                    <div class="col"> <i class="fab fa-instagram"></i></div>
+                    <div class="col"> <i class="fab fa-facebook"></i></div>
+                    <div class="col">  <i class="fab fa-whatsapp"></i></div>
+                    <div class="col">   <i class="fab fa-skype"></i></div>
+                </div>
+                </form>
+         <div id="downpage_3">
+          <a >
+             <i class="fas fa-angle-double-up"></i>
+          </a>
+              </div>
+        </div>
+
+
+
+</section>
+{% endblock %}

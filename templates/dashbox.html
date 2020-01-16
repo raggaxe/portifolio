@@ -1,0 +1,232 @@
+{% block body %}
+<style>
+    #dash_table{
+    margin:0 auto;
+    width:100%;
+    margin-top:20px;
+
+    }
+.black{
+ background: rgba(0, 10, 0, 0.75);
+box-shadow: 0 0 1px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
+border-radius: 5px;
+margin-bottom: 5px;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+height:640px;
+max-height: 700px;
+overflow: auto;
+}
+
+.list-item{
+ background: rgba(0, 10, 0, 0.3);
+ position:relative;
+ display:block;
+
+list-style-type: none;
+  margin: 0;
+  padding: 9px;
+  overflow-y: hidden;
+  max-height:620px;
+
+}
+.item {
+
+ background: rgba(0, 10, 0, 0.5);
+
+ height:165px;
+ margin: 0px 0px 10px 0px;
+
+ }
+
+.item a {
+display: block;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  u
+  }
+
+.label_atividade{
+background: none;
+width:100%;
+padding:15px;
+color:white;
+font-family: 'Lato';
+font-weight: 300;
+
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  vertical-align:middle;
+    text-align:center;
+
+}
+
+#working{
+background:#FB7D44;
+}
+
+#review{
+background:#2A92BF;
+}
+#aprovados{
+background:#00B961;
+}
+
+.andamento{
+  border-left: 6px solid #FB7D44;
+   vertical-align:middle;
+    text-align:center;
+}
+
+.revisao {
+border-left: 6px solid #2A92BF;
+}
+
+.andamento:hover {
+background: rgba(0, 10, 0, 0.35);
+
+}
+.andamento label h4:hover {
+color: rgb(251, 125, 68, .44);
+}
+
+.andamento label {
+position:relative;
+color:white;
+margin-top:15px;
+}
+
+
+.icones{
+color: rgb(251, 125, 68, .44);
+font-size:58px;
+}
+.andamento label p{
+opacity:0.55;
+}
+.andamento label h4{
+margin-top:-15px;
+text-transform: uppercase;
+}
+.andamento label h6{
+margin-top:-5px;
+text-transform: uppercase;
+font-size:12px;
+}
+.process {
+position:absolute;
+left:90%;
+margin-top:-15px;
+background:rgb(251, 125, 68, .44);
+
+padding-right:10px;
+padding-left:10px;
+}
+.process i{
+margin-top:20px;
+font-size:26px;
+opacity:0.66;
+}
+.process p{
+font-size:10px;
+}
+
+
+#add_btn {
+padding:30px;
+max-width:1000px;
+font-size:30px;
+background:rgb(0,8,0,0.86);}
+
+#add_btn:hover{
+background:#03797d;
+ border: 2px solid #03797d;
+
+}
+</style>
+
+<a id="add_btn" href="/add_jobs/" class="botoes botoes-primary botoes-block botoes-large">
+     <i class="fa fa-plus-square" aria-hidden="true"></i>
+    Adicionar novo Trabalho
+</a>
+
+
+ <table id="dash_table">
+
+            <tr>
+                <td>
+                     <section class="bax">
+                    <div class="info">
+                      <label id="working" class="label_atividade">EM ANDAMENTO</label>
+                    <ul  class="list-item">
+                        <form>
+                        <li class="item andamento">
+                            <input type="hidden" id="" name="" value="">
+                            <label>
+                                     <div class="process">
+                                         <i class="far fa-clock"></i>
+                                         <p>12/01</p>
+                                     </div>
+                                <i  class="icones fab fa-html5"></i>
+                                <p>HTML</p>
+                                 <h4>TAKUARA</h4>
+                            <h6>SITE | Esperando fotos</h6>
+                            </label>
+                        </li>
+                        </form>
+                    </ul>
+                    </div>
+                </section></td>
+                <td>
+                    <section class="bax">
+                       <div class="info">
+                      <label id="review" class="label_atividade">EM REVISÃO</label>
+                    <ul class="list-item">
+                        <form>
+                        <li class="item andamento revisao">
+                            <input type="hidden" id="#1" name="" value="">
+                            <label>
+                                     <div style="background:#2A92BF;opacity:0.66;"class="process">
+                                         <i class="far fa-clock"></i>
+                                         <p>12/01</p>
+                                     </div>
+                                <i  style="color:#2A92BF;opacity:0.66;" class="icones fab fa-html5"></i>
+                                <p>HTML</p>
+                                 <h4>TAKUARA</h4>
+                            <h6>SITE | Esperando fotos</h6>
+                            </label>
+                        </li>
+                        </form>
+                    </ul>
+                    </div>
+
+                </section></td>
+                <td>
+                    <section class="bax">
+                     <div class="info">
+                      <label id="aprovados" class="label_atividade">APROVADOS</label>
+                    <ul class="list-item">
+
+                        <li class="item andamento aprovado">
+                             <form>
+                            <input type="hidden" id="#2" name="" value="">
+                            <label>
+                                     <div style="background:#00B961;opacity:0.66;"class="process">
+                                         <i class="far fa-clock"></i>
+                                         <p>12/01</p>
+                                     </div>
+                                <i  style="color:#00B961;opacity:0.66;" class="icones fab fa-html5"></i>
+                                <p>HTML</p>
+                                 <h4>TAKUARA</h4>
+                            <h6>SITE | Esperando fotos</h6>
+                            </label>
+                                   </form>
+                        </li>
+
+                    </ul>
+                    </div>
+                </section></td>
+            </tr>
+        </table>
+{% endblock %}

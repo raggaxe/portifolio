@@ -1,0 +1,48 @@
+{% block body %}
+<style>
+
+
+.weather{
+width: 220px;
+  height: 93px;
+  margin:0 auto;
+  color:whitesmoke;
+  padding:25px;
+
+}
+.weather .header {
+  border-radius: 5px 5px 0 0;
+  padding: 1px 0;
+  background: #04C2C9;
+  text-align: center;
+  color: #fff;
+  font-size: 2.7em;
+}
+.weather [class*="icon-"] {
+  position: relative;
+  top: 2px;
+}
+.weather article {
+  text-align: center;
+  padding: 5px 0;
+
+}
+
+.weather h2{
+  font-size: 0.8em;
+
+
+}
+
+</style>
+ <section class="widget weather">
+          <header class="header">
+            <div class="temp">10&#176; <span class="icon-brightness-half"></span></div>
+            <span class="icon-partlycloudy"></span>
+          </header>
+          <article>
+            <h2>Saturday 16 January</h2>
+          </article>
+        </section>
+
+{% endblock %}

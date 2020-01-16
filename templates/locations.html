@@ -1,0 +1,84 @@
+{% block body %}
+
+<style>
+.locations {
+
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+
+margin:0 auto;
+  text-align: center;
+  color:whitesmoke;
+}
+.locations .avatar {
+  border-radius: 50%;
+}
+.locations .avatar img {
+width:150px;
+  border-radius: 50%;
+}
+.locations .details {
+ color:whitesmoke;
+ font: bold 0.8em/100% Raleway;
+  margin-top: 10px;
+}
+.locations .btn {
+  margin-top: 30px;
+}
+
+.botoes {
+   background: none;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #eee;
+    font: bold 0.9em/100% Raleway;
+    font-weight: 100;
+    border-radius: 3px;
+    outline: none;
+    opacity: 0.8;
+    border: 2px solid #04C2C9;
+    margin:0 auto;
+     width: 100%;
+     padding:30px;
+      letter-spacing: 5px;
+}
+.botoes:hover {
+  background: #e5e5e5;
+  color: #929797;
+}
+.botoes.botoes-primary {
+  background: none;
+  color: rgba(255, 255, 255, 0.9);
+}
+.botoes.botoes-primary:hover, .botoes.botoes-primary.active {
+  background: #03797d;
+  text-decoration:none;
+  border: 2px solid #03797d;
+}
+.botoes.botoes-large {
+  padding: 12px 28px;
+}
+.botoes.botoes-caps {
+  text-transform: uppercase;
+}
+.botoes.botoes-block {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+</style>
+<div class="locations">
+      <div class="avatar">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/6035/scrtpxls_location.png"  />
+      </div>
+      <div class="details">
+        <h2>Rafael Almeida</h2>
+        <p>admnistrador</p>
+        <a href="/logout/" class="botoes botoes-primary botoes-block botoes-large">SAIR</a>
+      </div>
+    </div>
+
+{% endblock %}

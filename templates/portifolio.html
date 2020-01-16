@@ -1,0 +1,504 @@
+{% block body %}
+<style>
+    #portifolio {
+padding-top:80px;
+  text-align: center;
+ height: 100%;
+ min-height: 580px;
+
+}
+
+
+#portifolio h2 {
+font: bold 6vw/86% Raleway;
+color:#E31B6D;
+padding-bottom:17px;
+margin: 0 auto;
+text-shadow: 1px 1px rgba(0,0,0,0.2);
+padding-top:10px;
+}
+
+.nav-tabs {
+background:none;
+  width: 100%;
+}
+
+.nav-tabs a{
+color:#C0C0C0;
+font: bold 0.7em/100% Raleway;
+
+}
+
+
+
+#pills-tabContent{
+overflow-y: scroll;
+overflow-x: hidden;
+max-height:480px;
+margin:0 auto;
+
+padding:20px;
+width:99%;
+}
+
+
+
+
+/* width */
+#pills-tabContent::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+#pills-tabContent::-webkit-scrollbar-track {
+
+  border-radius: 10px;
+}
+
+/* Handle */
+#pills-tabContent::-webkit-scrollbar-thumb {
+  background: #E31B6D;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+#pills-tabContent::-webkit-scrollbar-thumb:hover {
+  background: #E31B6D;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+figure.snip1321 {
+
+   position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 230px;
+  height:230px;
+  padding:0px;
+  color: #000000;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  margin-bottom:5px;
+
+
+
+}
+
+
+figure.snip1321 * {
+  -webkit-box-sizing: padding-box;
+  box-sizing: padding-box;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+
+}
+figure.snip1321 img {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    height:100%;
+
+
+
+}
+figure.snip1321 figcaption {
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  position: absolute;
+  opacity: 0;
+  z-index: 1;
+}
+figure.snip1321 h2,
+figure.snip1321 h4 {
+  margin: 0;
+}
+figure.snip1321 h2 {
+  font-weight: 600;
+}
+figure.snip1321 h4 {
+ font: bold 1.6em/100% Raleway;
+
+  text-transform: uppercase;
+}
+figure.snip1321 i {
+  font-size: 39px;
+  color:#ff8000;
+}
+figure.snip1321 p {
+   font: bold 0.8em/100% Raleway;
+   color:#B0B0B0;
+
+   text-transform: uppercase;
+}
+
+figure.snip1321:after {
+  background-color: #ffffff;
+  position: absolute;
+  content: "";
+  display: block;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  -webkit-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
+  -webkit-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+figure.snip1321 a {
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  z-index: 1;
+}
+figure.snip1321:hover figcaption,
+figure.snip1321.hover figcaption {
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 1;
+  -webkit-transition-delay: 0.2s;
+  transition-delay: 0.2s;
+}
+figure.snip1321:hover:after,
+figure.snip1321.hover:after {
+  -webkit-transform: rotateX(0);
+  transform: rotateX(0);
+  opacity: 0.9;
+}
+
+
+
+
+#downpage_2{
+position:relative;
+width:60px;
+background:none;
+cursor:pointer;
+margin:0 auto;
+
+
+-webkit-animation: downarrow 0.5s ease-in-out infinite;
+			animation: downarrow 0.5s ease-in-out infinite;
+
+}
+
+
+#downpage_2 a {
+color:#E31B6D;
+font-size:36px;
+
+}
+
+
+
+
+
+
+.modal-title {
+font: bold 0.8em Raleway;
+    text-align: center;
+    margin: 0px;
+    font-size: 26pt;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    width: 100%;
+    color:#ff8000;
+}
+
+
+#tabContent {
+ background:#ff8000;
+  height: 34px;
+  width: 100%;
+    text-align: center;
+
+
+}
+
+#tabContent li{
+margin:0 auto;
+text-transform: uppercase;
+  color: #2E1C05;
+  margin-top:11px;
+   font: bold 0.8em/100% Raleway;
+
+
+}
+#tabContent a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+#tabContent a:hover {
+  color: #b34700;
+  text-decoration: none;
+}
+
+
+
+@media (max-width: 740px) {
+
+.section-white h2{
+
+font: bold 2.3em/130% Raleway
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+	<section class="section-white">
+        <div id="portifolio" class="container-fluid">
+              <h2>PORTIFÓLIO DIGITAL </h2>
+            <ul class="nav nav-tabs justify-content-center mb-3 " id="pills-tab" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">TODOS</a>
+          </li>
+        </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div id="all" class="row insert_card_all">
+                          <figure class="snip1321">
+                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample26.jpg" alt="sq-sample26"/>
+                              <figcaption>
+                                  <i class="fab fa-python"></i>
+                                    <h4>PYTHON</h4>
+                                    <p>Delivery Bot para facebook</p>
+                              </figcaption>
+                              <a href="#"></a>
+                          </figure>
+                    </div>
+                </div>
+            </div>
+            <div id="downpage_2">
+          <a >
+              <i class="fas fa-angle-double-down"></i>
+          </a>
+              </div>
+        </div>
+
+    </section>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type=text/javascript>
+
+
+$(document).ready(function(){
+	 $('[data-toggle="popover"]').popover({
+          //trigger: 'focus',
+		  trigger: 'hover',
+          html: true,
+          content: function () {
+				return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
+          },
+          title: 'Toolbox'
+    })
+});
+ $(document).ready(function () {
+        // Tooltips
+        $('.tip').each(function () {
+            $(this).tooltip(
+            {
+                html: true,
+                title: $('#' + $(this).data('tip')).html()
+            });
+        });
+    });
+
+
+
+ const navbar = document.getElementById('pills-tab');
+ const TabContent = document.getElementById('pills-tabContent');
+ const portifolio = [];
+ const categorias = [];
+ const all_cards = document.getElementById("all");
+
+
+
+fetch('/portifolio/')
+    .then(function (response) {
+        return response.json(); // But parse it as JSON this time
+    })
+    .then(function (data) {
+
+        for (var i = 0; i < data.length; i++){
+            var obj = data[i];
+           portifolio.push(obj)
+
+          for (var key in obj){
+            var attrName = key;
+            var attrValue = obj[key];
+
+            if (attrName === 'categoria'){
+
+            categorias.push(attrValue);
+            }
+
+            }
+            }
+            var uniqueNames = getUnique(categorias);
+            uniqueNames.forEach(CreateTabs);
+            portifolio.forEach(CreateCards);
+    });
+
+    function getUnique(array){
+        var uniqueArray = [];
+        // Loop through array values
+        for(i=0; i < array.length; i++){
+            if(uniqueArray.indexOf(array[i]) === -1) {
+                uniqueArray.push(array[i]);
+            }
+        }
+        return uniqueArray;
+    }
+
+
+
+function CreateTabs(item) {
+
+  var li = document.createElement("li");
+  li.setAttribute("class", "nav-item");
+  navbar.appendChild(li);
+
+   var a = document.createElement("a");
+   a.appendChild(document.createTextNode(item));
+   a.setAttribute("class", "nav-link");
+   a.setAttribute("id", "pills-"+item+"-tab");
+   a.setAttribute("data-toggle", "pill");
+   a.setAttribute("href", "#pills-"+item);
+   a.setAttribute("role", "tab");
+   a.setAttribute("aria-controls", "pills-"+item);
+   a.setAttribute("aria-selected", "false");
+   li.appendChild(a);
+
+   var tab = document.createElement("div");
+   tab.appendChild(document.createTextNode(item));
+   tab.setAttribute("class", "tab-pane fade");
+   tab.setAttribute("id", "pills-"+item);
+   tab.setAttribute("role", "tabpanel");
+   tab.setAttribute("aria-labelledby", "pills-"+item+"-tab");
+   TabContent.appendChild(tab);
+
+   var card_row = document.createElement("div");
+   card_row.setAttribute("class", "row wake " +item);
+   card_row.setAttribute("id", item);
+   card_row.setAttribute("name", item);
+   tab.appendChild(card_row);
+
+
+
+
+    }
+
+
+function CreateCards(item) {
+                var x = document.querySelectorAll('#'+item.categoria);
+                var url = "{{ url_for( 'uploaded_file', filename='foto' )}}".replace("foto", item.arquivo)
+                var figure = document.createElement("figure");
+                  figure.setAttribute("class", "snip1321");
+                  var img = document.createElement("img");
+                  img.setAttribute("src", url );
+                  figure.appendChild(img);
+                  var a = document.createElement("a");
+                   a.setAttribute("href", item.link);
+                   figure.appendChild(a);
+
+                  all_cards.appendChild(figure);
+                  var figcaption = document.createElement("figcaption");
+  figure.appendChild(figcaption);
+
+  var i = document.createElement("i");
+  i.setAttribute("class", "fab fa-python");
+
+  var h4 = document.createElement("h4");
+  h4.setAttribute("class", "text-inner");
+  h4.appendChild(document.createTextNode(item.linguagem));
+  var p = document.createElement("p");
+   p.appendChild(document.createTextNode(item.nome));
+  figcaption.appendChild(i);
+  figcaption.appendChild(h4);
+  figcaption.appendChild(p);
+
+
+
+
+
+
+
+                 x.forEach(e => {
+
+                  var figure = document.createElement("figure");
+                  figure.setAttribute("class", "snip1321");
+
+                  var img = document.createElement("img");
+                  img.setAttribute("src", url );
+
+                  figure.appendChild(img);
+                  e.appendChild(figure);
+                  var figcaption = document.createElement("figcaption");
+  figure.appendChild(figcaption);
+   var a = document.createElement("a");
+
+                   a.setAttribute("href", item.link);
+                   figure.appendChild(a);
+
+  var i = document.createElement("i");
+  i.setAttribute("class", "fab fa-python");
+
+  var h4 = document.createElement("h4");
+  h4.setAttribute("class", "text-inner");
+  h4.appendChild(document.createTextNode(item.linguagem));
+  var p = document.createElement("p");
+   p.appendChild(document.createTextNode(item.nome));
+  figcaption.appendChild(i);
+  figcaption.appendChild(h4);
+  figcaption.appendChild(p);
+
+                   })
+
+            }
+
+
+</script>
+
+{% endblock %}

@@ -1,0 +1,102 @@
+{% block body %}
+<style>
+
+.calendar {
+background: rgba(0, 10, 0, 0.75);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.8), 0 2px 4px rgba(0, 0, 0, 0.9);
+  border-radius: 5px;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+width: 230px;
+margin:0 auto;
+  text-align: center;
+  color:whitesmoke;
+ font: bold 0.8em/100% Raleway;
+}
+.calendar .header {
+  padding: 10px 0;
+}
+.calendar [class*="icon-"] {
+  color: #dd5555;
+  position: relative;
+  top: 2px;
+  margin: 0 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+.calendar .days {
+  background: #04C2C9;
+  padding: 10px;
+  border-radius: 0 0 5px 5px;
+}
+.calendar .days ul {
+  margin: 0;
+  padding: 0;
+}
+.calendar .days li {
+  display: inline-block;
+  color: #fff;
+  padding: 5px 0;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+  font: bold 0.9em/100% Raleway;
+}
+@media (max-width: 767px) {
+  .calendar .days li {
+    width: 20px;
+    height: 20px;
+  }
+}
+.calendar .days li.next, .calendar .days li.previous {
+  color: rgba(0, 0, 0, 0.2);
+}
+</style>
+ <section class="widget calendar">
+      <header class="header">
+        <h2>Saturday</h2>
+        <p><span class="fas fa-angle-left icon-arrow-left"></span>January<span class="fas fa-angle-right icon-arrow-right"></span></p>
+      </header>
+      <article class="days">
+        <ul>
+          <li class="previous">30</li>
+          <li class="previous">31</li>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>10</li>
+          <li>11</li>
+          <li>12</li>
+          <li>13</li>
+          <li>14</li>
+          <li>15</li>
+          <li>16</li>
+          <li>17</li>
+          <li>18</li>
+          <li>19</li>
+          <li>20</li>
+          <li>21</li>
+          <li>22</li>
+          <li>23</li>
+          <li>24</li>
+          <li>25</li>
+          <li>26</li>
+          <li>27</li>
+          <li>28</li>
+          <li>29</li>
+          <li>30</li>
+          <li>31</li>
+          <li class="next">1</li>
+          <li class="next">2</li>
+        </ul>
+      </article>
+    </section>
+
+{% endblock %}
