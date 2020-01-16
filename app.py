@@ -9,7 +9,9 @@ from werkzeug.utils import secure_filename
 import os
 import json
 
-app = Flask(__name__,static_url_path='/static')
+
+app = Flask(__name__)
+
 dia = str(datetime.now().strftime("%d-%m-%Y"))
 
 
@@ -46,7 +48,7 @@ def memory_images(filename):
                                filename)
 
 
-@app.route("/")
+@app.route("/", methods=['GET'])
 def home():
     return render_template("teste.html")
 
@@ -477,8 +479,10 @@ def memory_game():
 
 
 
-
+def main ():
+    app.secret_key = 'valeteDjLm'
+    port = int(os.environ.get("PORT", 5002))
+    app.run (host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
-    app.secret_key = 'valeteDjLm'
-    app.run(port=5002,debug=True)
+   main()
