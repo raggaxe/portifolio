@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="db modificacoes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,10 +102,10 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="188" y="108" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.846@0.23.1440.846" timestamp="1579209779239" />
-    <state x="276" y="48" key="CommitChangelistDialog2" timestamp="1579212684183">
+    <state x="276" y="48" key="CommitChangelistDialog2" timestamp="1579729591992">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1579212684183" />
+    <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1579729591992" />
     <state x="0" y="147" key="SettingsEditor" timestamp="1579209557258">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
