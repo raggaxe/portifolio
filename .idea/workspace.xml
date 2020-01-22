@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="">
+    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="db modificacoes">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,12 +83,20 @@
       <option name="project" value="LOCAL" />
       <updated>1579212309203</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="db modificacoes">
+      <created>1579212671026</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579212671026</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="app changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="app changes" />
+    <MESSAGE value="db modificacoes" />
+    <option name="LAST_COMMIT_MESSAGE" value="db modificacoes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="188" y="108" width="1071" height="696" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1579209779239">
@@ -102,5 +111,9 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="0" y="147" key="SettingsEditor/0.23.1440.846@0.23.1440.846" timestamp="1579209557258" />
+    <state x="399" y="314" key="com.intellij.ide.util.TipDialog" timestamp="1579303994476">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state x="399" y="314" key="com.intellij.ide.util.TipDialog/0.23.1440.846@0.23.1440.846" timestamp="1579303994476" />
   </component>
 </project>

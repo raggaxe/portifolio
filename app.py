@@ -41,12 +41,10 @@ def uploaded_file(filename):
     return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
 
-
 @app.route('/transfer_images/<filename>', methods=['GET', 'POST'])
 def memory_images(filename):
     return send_from_directory(app.config['MEMORY_GAME_FOLDER'],
                                filename)
-
 
 @app.route("/", methods=['GET'])
 def home():
