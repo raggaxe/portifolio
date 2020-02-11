@@ -1,15 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="db modificacoes">
-      <change afterPath="$PROJECT_DIR$/templates/grafico.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/portifolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portifolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-    </list>
+    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -129,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579212671026</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="db modificacoes">
+      <created>1581431968822</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1581431968822</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -146,22 +145,22 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1581431968638" />
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581431755176">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581432298828">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581431755176" />
-    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581431755175">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581432298828" />
+    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581432298827">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581431755175" />
-    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581431755174">
+    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581432298827" />
+    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581432298827">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581431755174" />
-    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581431755175">
+    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581432298827" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581432298828">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581431755175" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581432298828" />
     <state x="0" y="147" key="SettingsEditor" timestamp="1579209557258">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
