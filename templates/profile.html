@@ -19,6 +19,7 @@
 ================================ */
 .conteudo{
 position:relative;
+
 }
 
 
@@ -36,7 +37,7 @@ margin:0 auto;
     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.40);
     position:relative;
-    top:14%;
+    margin-top:17%;
 
 
 }
@@ -105,7 +106,7 @@ letter-spacing: 2px;
 
 .perfil {
 position:relative;
-    padding: 14px;
+    padding: 23px;
     width:100%;
     background: #04C2C9;
     color: #FFFFFF;
@@ -358,25 +359,42 @@ width: 25rem;
 
 /* #  MEDIA SMARTPHONES
 ================================ */
+@media only screen and (max-width: 600px) {
 
 
-@media (max-width: 970px) {
 
-.graficscard,
 #exclui{
 display:none;}
 
 
 
 .perfilcard {
- width: 410px;
- margin-top:-20px;
+ width: 100%;
+ margin-top:5%;
+
 }
+
+.title{
+display:flex;}
 
 #grafico {
 display: initial;
 padding-top:5px;
 }
+
+.leve{
+font-size:60px;
+margin-bottom:10px;
+
+}
+
+
+.perfil{
+padding:30px;}
+
+
+#grafico{
+padding:30px;}
 
 }
 
@@ -393,18 +411,47 @@ padding-top:5px;
                             <div class="profile-photo">
                                 <img src="./static/img/image.png">
                             </div>
-                            <h1 class="leve">Sobre</h1>
-                            <h1 class="leve mudar">Mim</h1>
+                            <div class="title">
+                            <h1 class="leve">Sobre Mim</h1>
+
+                                </div>
                             <p class="lead2">
                                 Oi! Eu sou um web designer/desenvolvedor localizado em Figueira da Foz, Portugal. Tenho uma paixão por designer e amor por criar conteúdo web , mobile e artes digitais.
                             </p>
                             <button type="button" class="perfil" data-toggle="modal" data-target="#staticBackdrop2"> <a>Currículo completo</a></button>
-                            <button  type="button" id="grafico" class="perfil" data-toggle="modal" data-target="#staticBackdrop"> <a>Skills / Habilidades</a></button>
+<button type="button" id="grafico" class="btn btn-info btn-lg perfil" data-toggle="modal" data-target="#myModal">Skills / Habilidades</button>
+<!--                            <button  type="button"  class="" data-toggle="modal" data-target="#staticBackdrop"> <a  href="#"></a></button>-->
                         </div>
                     </div>
                      <div id="exclui" class="col">
-                         <div id="graf" class="card graficscard">
-                      <h1 class="habilidades">Habilidades </h1>
+                         {% include 'grafico.html' %}
+                     </div>
+                 </div>
+             </div>
+
+          <div id="downpage">
+          <a >
+              <i class="fas fa-angle-double-down"></i>
+          </a>
+              </div>
+
+      </section>
+
+
+   <!-- Modal  GRAFICOS-->
+
+         <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title ">Habilidades</h4>
+      </div>
+      <div class="modal-body">
+        <div  id="modal_grafic" class="">
+
                       <div class="container-fluid gfc">
 
                         <div class="row piano">
@@ -418,7 +465,8 @@ padding-top:5px;
                             </div>
                          </div>
                         <div class="row piano">
-    <span class="atividadebox"><div class="atividade">HTML</div></span>
+    <span class="atividadebox"
+    ><div class="atividade">HTML</div></span>
                       <div class="SkillBar">
     <div id="Skill-HTML">
       <span class="PercentText ">90%</span>
@@ -524,32 +572,16 @@ padding-top:5px;
                           </div>
                       </div>
                   </div>
-                     </div>
-                 </div>
-             </div>
-
-          <div id="downpage">
-          <a >
-              <i class="fas fa-angle-double-down"></i>
-          </a>
-              </div>
-
-      </section>
-   <!-- Modal  GRAFICOS-->
-<div class="modal fade" id="staticBackdrop" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-      <div  class="modal-content">
-             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-           </button>
-          <div id="bruxa" class="modal-body">
-
       </div>
-          <div  class="card" id="result">
-          </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
+
+  </div>
 </div>
-   <!-- Modal  CURRICULO-->
+
+  <!-- Modal  CURRICULO-->
     <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -559,7 +591,7 @@ padding-top:5px;
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-        <ul  class="nav nav-tabs" id="tabContent">
+        <ul  class="nav nav-tabs" >
    <li class="active"><a href="#details" data-toggle="tab">Info Geral</a></li>
     <li><a href="#educacao" data-toggle="tab">Educação</a></li>
     <li><a href="#networking" data-toggle="tab">Experiências</a></li>
@@ -628,6 +660,7 @@ padding-top:5px;
                  </div>
             </div>
         </div>
+        <hr>
         <label class="control-label">CURSOS COMPLEMENTARES</label>
         <div class="container-fluid top">
              <h3> Designer Gráfico - Certificado Adobe </h3>
@@ -645,7 +678,7 @@ padding-top:5px;
                  </div>
             </div>
         </div>
-
+<hr>
         <div  class="container-fluid top">
              <h3> Desenho a Mão </h3>
              <div class="link">
@@ -660,6 +693,7 @@ padding-top:5px;
                  </div>
             </div>
         </div>
+        <hr>
         <div class="container-fluid top">
             <h3> Agente Cultural do Distrito Federal </h3>
             <div class="link">
@@ -676,6 +710,7 @@ padding-top:5px;
                  </div>
             </div>
         </div>
+        <hr>
          <label class="control-label">@rafael_axe</label>
     </div>
 

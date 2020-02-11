@@ -477,10 +477,16 @@ def memory_game():
 
 
 
-def main ():
-    app.secret_key = 'valeteDjLm'
-    port = int(os.environ.get("PORT", 5002))
-    app.run (host="0.0.0.0", port=port)
+# def main ():
+#     app.secret_key = 'valeteDjLm'
+#     port = int(os.environ.get("PORT", 5002))
+#     app.run (host="0.0.0.0", port=port)
+#
+# if __name__ == "__main__":
+#    main()
+
 
 if __name__ == "__main__":
-   main()
+
+    app.secret_key = 'maya2019'
+    app.run(debug=True, port=5002)
