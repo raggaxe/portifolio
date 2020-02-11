@@ -1,50 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/165995_376448015754252_731978843_n.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/170354_130145250384531_3734838_o.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/170522_130139250385131_3498072_o.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/AUDIO_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/CACHUEIRA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/CACHUEIRA_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/CANTOIEITURA.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/CANTOIEITURA_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/IMG_20190808_212426_671.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/PANFLETO-exodus_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/PANFLETO.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/Panfleto-ZebASHLAND_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/PropostaDVD.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/PropostaDVD_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/WhatsApp_Image_2019-07-12_at_19.37.27.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/banner-Boulevard.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/banner-Boulevard_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/bikeexodus_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/blackmusic_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/camisa-dialeto_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/camisa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/chatbot_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/convite-yamoni_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-1_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-2_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-3_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/etiquetas-exodus_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/etiquetas.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/folder-connection_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/panfleto.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/terra-prometida-cd_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/tim.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/verao-exodus_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/verso_2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/videos_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/zebulon-cd-Interno_small.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_jobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_jobs.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/portifolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portifolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-    </list>
+    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
