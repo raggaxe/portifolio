@@ -40,7 +40,7 @@ def login_required(f):
 def uploaded_file(filename):
     if filename == '.DS_Store':
         return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               'cartaz_logo.jpg')
+                               'cartaz_1.jpg')
     else:
         return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
