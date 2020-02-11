@@ -270,7 +270,10 @@ font-size:36px;
 
 
 
-
+.top{
+height:auto;
+padding:20px;
+}
 
 .top h6{
 padding:10px;
@@ -355,6 +358,30 @@ width: 25rem;
 
 
 
+#tabContent li{
+margin:0 auto;
+text-transform: uppercase;
+  color: #2E1C05;
+  margin-top:11px;
+
+   font: bold 0.8em/100% Raleway;
+
+
+}
+#tabContent a{
+  color: whitesmoke;
+  text-decoration: none;
+  font-size:15px;
+}
+
+#tabContent a:hover {
+  color: #b34700;
+  text-decoration: none;
+}
+
+
+
+
 
 
 /* #  MEDIA SMARTPHONES
@@ -397,6 +424,10 @@ padding:30px;}
 padding:30px;}
 
 }
+
+
+
+
 
 
 
@@ -659,10 +690,11 @@ padding:30px;}
                 <a>Ver diploma</a>
                  </div>
             </div>
+
         </div>
-        <hr>
+
         <label class="control-label">CURSOS COMPLEMENTARES</label>
-        <div class="container-fluid top">
+        <div class="container-fluid top jinja">
              <h3> Designer Gráfico - Certificado Adobe </h3>
               <div class="link">
                <a  href="https://www.studioonline.com.br/curso-de-criacao-publicitaria-studio-online-2/"> Studio On-line</a>
@@ -852,7 +884,7 @@ e instruções ou situações de imprevisto, acredito que trabalhar em equipe aj
 
   </body>
 <script>
-    $('#titulo_rafa').circleType({radius:135});
+
 </script>
 
 {% endblock %}

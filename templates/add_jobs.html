@@ -942,27 +942,6 @@ margin-left:-10px;
 
 
 <script>
-    $(document).ready(function(){
-	 $('[data-toggle="popover"]').popover({
-          //trigger: 'focus',
-		  trigger: 'hover',
-          html: true,
-          content: function () {
-				return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
-          },
-          title: 'Toolbox'
-    })
-});
- $(document).ready(function () {
-        // Tooltips
-        $('.tip').each(function () {
-            $(this).tooltip(
-            {
-                html: true,
-                title: $('#' + $(this).data('tip')).html()
-            });
-        });
-    });
 
 
  $(document).ready(function () {

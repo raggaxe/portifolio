@@ -1,7 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="" />
+    <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/165995_376448015754252_731978843_n.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/170354_130145250384531_3734838_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/170522_130139250385131_3498072_o.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/AUDIO_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/CACHUEIRA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/CACHUEIRA_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/CANTOIEITURA.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/CANTOIEITURA_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/IMG_20190808_212426_671.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/PANFLETO-exodus_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/PANFLETO.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/Panfleto-ZebASHLAND_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/PropostaDVD.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/PropostaDVD_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/WhatsApp_Image_2019-07-12_at_19.37.27.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/banner-Boulevard.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/banner-Boulevard_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/bikeexodus_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/blackmusic_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/camisa-dialeto_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/camisa.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/chatbot_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/convite-yamoni_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-1_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-2_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/estacao-central-3_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/etiquetas-exodus_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/etiquetas.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/folder-connection_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/panfleto.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/terra-prometida-cd_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/tim.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/verao-exodus_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/verso_2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/videos_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/zebulon-cd-Interno_small.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_jobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_jobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/portifolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portifolio.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -145,22 +188,22 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1581431968638" />
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581432298828">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581439003447">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581432298828" />
-    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581432298827">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581439003447" />
+    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581439003446">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581432298827" />
-    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581432298827">
+    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581439003446" />
+    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581439003445">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581432298827" />
-    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581432298828">
+    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581439003445" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581439003446">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581432298828" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581439003446" />
     <state x="0" y="147" key="SettingsEditor" timestamp="1579209557258">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
@@ -169,5 +212,9 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="399" y="314" key="com.intellij.ide.util.TipDialog/0.23.1440.846@0.23.1440.846" timestamp="1579303994476" />
+    <state x="735" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1581439287511">
+      <screen x="0" y="23" width="1440" height="846" />
+    </state>
+    <state x="735" y="370" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.846@0.23.1440.846" timestamp="1581439287511" />
   </component>
 </project>

@@ -15,7 +15,7 @@ app = Flask(__name__)
 dia = str(datetime.now().strftime("%d-%m-%Y"))
 
 
-UPLOAD_FOLDER = "/Users/rafael/Desktop/Projetos Python/Portifolio Rafael/static/uploads"
+UPLOAD_FOLDER = "./static/uploads"
 MEMORY_GAME_FOLDER = "/Users/rafael/Desktop/Projetos Python/Portifolio Rafael/static/memorygame"
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
@@ -38,17 +38,25 @@ def login_required(f):
 
 @app.route('/transfer/<filename>', methods=['GET', 'POST'])
 def uploaded_file(filename):
-    return send_from_directory(app.config['UPLOAD_FOLDER'],
+    if filename == '.DS_Store':
+        return send_from_directory(app.config['UPLOAD_FOLDER'],
+                               'cartaz.jpg')
+    else:
+        return send_from_directory(app.config['UPLOAD_FOLDER'],
                                filename)
 
 @app.route('/transfer_images/<filename>', methods=['GET', 'POST'])
 def memory_images(filename):
+
     return send_from_directory(app.config['MEMORY_GAME_FOLDER'],
                                filename)
 
 @app.route("/", methods=['GET'])
 def home():
-    return render_template("teste.html")
+    files = os.listdir(UPLOAD_FOLDER)
+
+
+    return render_template("teste.html", files=files)
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
@@ -137,11 +145,11 @@ def login():
 
 
 
-            # if request.form['email'] == "admin@admin.com" and request.form['password'] == "123456":
-            #     session['admin'] = True
-            #     session['email'] = email
-            #
-            #     return redirect(url_for('dashboard'))
+            if request.form['email'] == "admin@admin.com" and request.form['password'] == "123456":
+                session['admin'] = True
+                session['email'] = email
+
+                return redirect(url_for('dashboard'))
 
 
         return render_template("teste.html", error=error)
@@ -477,16 +485,16 @@ def memory_game():
 
 
 
-def main ():
-    app.secret_key = 'valeteDjLm'
-    port = int(os.environ.get("PORT", 5002))
-    app.run (host="0.0.0.0", port=port)
+# def main ():
+#     app.secret_key = 'valeteDjLm'
+#     port = int(os.environ.get("PORT", 5002))
+#     app.run (host="0.0.0.0", port=port)
+#
+# if __name__ == "__main__":
+#    main()
+
 
 if __name__ == "__main__":
-   main()
 
-
-# if __name__ == "__main__":
-#
-#     app.secret_key = 'maya2019'
-#     app.run(debug=True, port=5002)
+    app.secret_key = 'maya2019'
+    app.run(debug=True, port=5002)

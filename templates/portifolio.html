@@ -3,11 +3,12 @@
     #portifolio {
 padding-top:80px;
   text-align: center;
- height: 100%;
- min-height: 580px;
+
+
 
 }
-
+.section-white{
+height:1200px;}
 
 #portifolio h2 {
 font: bold 6vw/86% Raleway;
@@ -34,7 +35,7 @@ font: bold 0.7em/100% Raleway;
 #pills-tabContent{
 overflow-y: scroll;
 overflow-x: hidden;
-max-height:480px;
+max-height:880px;
 margin:0 auto;
 
 padding:20px;
@@ -77,9 +78,38 @@ width:99%;
 
 
 
+.still{
+position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 100%;
+
+  height:430px;
+  padding:0px;
+  color: #000000;
+  text-align: center;
+  -webkit-perspective: 50em;
+  perspective: 50em;
+  margin-bottom:5px;
+
+
+}
+
+
+.still img {
+  position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+    margin: 0 auto;
+    height:100%;
 
 
 
+
+
+}
 
 
 
@@ -243,28 +273,11 @@ font: bold 0.8em Raleway;
 
 }
 
-#tabContent li{
-margin:0 auto;
-text-transform: uppercase;
-  color: #2E1C05;
-  margin-top:11px;
-   font: bold 0.8em/100% Raleway;
-
-
-}
-#tabContent a{
-  color: whitesmoke;
-  text-decoration: none;
-}
-
-#tabContent a:hover {
-  color: #b34700;
-  text-decoration: none;
-}
 
 
 
-@media (max-width: 740px) {
+
+@media (max-width: 640px) {
 
 .section-white h2{
 
@@ -273,6 +286,21 @@ font: bold 2.3em/130% Raleway
 }
 
 
+.still img {
+  position: relative;
+
+    margin: 0 auto;
+height:auto;
+    width:100%;
+
+}
+
+.still {
+
+
+}
+
+
 
 }
 
@@ -282,8 +310,19 @@ font: bold 2.3em/130% Raleway
 
 
 
+.portifolio_list{
+width:100%;
+margin:0 auto;
+}
+
+.portifolio_item{
+width:100%;
+}
 
 
+
+ul{
+list-style-type:none;}
 
 
 </style>
@@ -297,17 +336,23 @@ font: bold 2.3em/130% Raleway
         </ul>
             <div class="tab-content " id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                    <div id="all" class="row insert_card_all">
-                          <figure class="snip1321">
-                              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/331810/sq-sample26.jpg" alt="sq-sample26"/>
-                              <figcaption>
-                                  <i class="fab fa-python"></i>
-                                    <h4>PYTHON</h4>
-                                    <p>Delivery Bot para facebook</p>
-                              </figcaption>
-                              <a href="#"></a>
+
+                        <ul class="portifolio_list">
+                            <li class="portifolio_item">
+                        {% for file in files %}
+                          <figure class="still">
+                              <img src="{{ url_for('uploaded_file', filename=file) }}" alt="sq-sample26"/>
+<!--                              <figcaption>-->
+<!--                                  <i class="fab fa-python"></i>-->
+<!--                                    <h4>PYTHON</h4>-->
+<!--                                    <p>Delivery Bot para facebook</p>-->
+<!--                              </figcaption>-->
+<!--                              <a href="#"></a>-->
                           </figure>
-                    </div>
+                        {% endfor %}
+                            </li>
+                            </ul>
+
                 </div>
             </div>
             <div id="downpage_2">
@@ -323,141 +368,120 @@ font: bold 2.3em/130% Raleway
 <script type=text/javascript>
 
 
-$(document).ready(function(){
-	 $('[data-toggle="popover"]').popover({
-          //trigger: 'focus',
-		  trigger: 'hover',
-          html: true,
-          content: function () {
-				return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
-          },
-          title: 'Toolbox'
-    })
-});
- $(document).ready(function () {
-        // Tooltips
-        $('.tip').each(function () {
-            $(this).tooltip(
-            {
-                html: true,
-                title: $('#' + $(this).data('tip')).html()
-            });
-        });
-    });
 
 
 
- const navbar = document.getElementById('pills-tab');
- const TabContent = document.getElementById('pills-tabContent');
- const portifolio = [];
- const categorias = [];
- const all_cards = document.getElementById("all");
+<!-- const navbar = document.getElementById('pills-tab');-->
+<!-- const TabContent = document.getElementById('pills-tabContent');-->
+<!-- const portifolio = [];-->
+<!-- const categorias = [];-->
+<!-- const all_cards = document.getElementById("all");-->
 
 
 
-fetch('/portifolio/')
-    .then(function (response) {
-        return response.json(); // But parse it as JSON this time
-    })
-    .then(function (data) {
+<!--fetch('/portifolio/')-->
+<!--    .then(function (response) {-->
+<!--        return response.json(); // But parse it as JSON this time-->
+<!--    })-->
+<!--    .then(function (data) {-->
 
-        for (var i = 0; i < data.length; i++){
-            var obj = data[i];
-           portifolio.push(obj)
+<!--        for (var i = 0; i < data.length; i++){-->
+<!--            var obj = data[i];-->
+<!--           portifolio.push(obj)-->
 
-          for (var key in obj){
-            var attrName = key;
-            var attrValue = obj[key];
+<!--          for (var key in obj){-->
+<!--            var attrName = key;-->
+<!--            var attrValue = obj[key];-->
 
-            if (attrName === 'categoria'){
+<!--            if (attrName === 'categoria'){-->
 
-            categorias.push(attrValue);
-            }
+<!--            categorias.push(attrValue);-->
+<!--            }-->
 
-            }
-            }
-            var uniqueNames = getUnique(categorias);
-            uniqueNames.forEach(CreateTabs);
-            portifolio.forEach(CreateCards);
-    });
+<!--            }-->
+<!--            }-->
+<!--            var uniqueNames = getUnique(categorias);-->
+<!--            uniqueNames.forEach(CreateTabs);-->
+<!--            portifolio.forEach(CreateCards);-->
+<!--    });-->
 
-    function getUnique(array){
-        var uniqueArray = [];
-        // Loop through array values
-        for(i=0; i < array.length; i++){
-            if(uniqueArray.indexOf(array[i]) === -1) {
-                uniqueArray.push(array[i]);
-            }
-        }
-        return uniqueArray;
-    }
+<!--    function getUnique(array){-->
+<!--        var uniqueArray = [];-->
+<!--        // Loop through array values-->
+<!--        for(i=0; i < array.length; i++){-->
+<!--            if(uniqueArray.indexOf(array[i]) === -1) {-->
+<!--                uniqueArray.push(array[i]);-->
+<!--            }-->
+<!--        }-->
+<!--        return uniqueArray;-->
+<!--    }-->
 
 
 
-function CreateTabs(item) {
+<!--function CreateTabs(item) {-->
 
-  var li = document.createElement("li");
-  li.setAttribute("class", "nav-item");
-  navbar.appendChild(li);
+<!--  var li = document.createElement("li");-->
+<!--  li.setAttribute("class", "nav-item");-->
+<!--  navbar.appendChild(li);-->
 
-   var a = document.createElement("a");
-   a.appendChild(document.createTextNode(item));
-   a.setAttribute("class", "nav-link");
-   a.setAttribute("id", "pills-"+item+"-tab");
-   a.setAttribute("data-toggle", "pill");
-   a.setAttribute("href", "#pills-"+item);
-   a.setAttribute("role", "tab");
-   a.setAttribute("aria-controls", "pills-"+item);
-   a.setAttribute("aria-selected", "false");
-   li.appendChild(a);
+<!--   var a = document.createElement("a");-->
+<!--   a.appendChild(document.createTextNode(item));-->
+<!--   a.setAttribute("class", "nav-link");-->
+<!--   a.setAttribute("id", "pills-"+item+"-tab");-->
+<!--   a.setAttribute("data-toggle", "pill");-->
+<!--   a.setAttribute("href", "#pills-"+item);-->
+<!--   a.setAttribute("role", "tab");-->
+<!--   a.setAttribute("aria-controls", "pills-"+item);-->
+<!--   a.setAttribute("aria-selected", "false");-->
+<!--   li.appendChild(a);-->
 
-   var tab = document.createElement("div");
-   tab.appendChild(document.createTextNode(item));
-   tab.setAttribute("class", "tab-pane fade");
-   tab.setAttribute("id", "pills-"+item);
-   tab.setAttribute("role", "tabpanel");
-   tab.setAttribute("aria-labelledby", "pills-"+item+"-tab");
-   TabContent.appendChild(tab);
+<!--   var tab = document.createElement("div");-->
+<!--   tab.appendChild(document.createTextNode(item));-->
+<!--   tab.setAttribute("class", "tab-pane fade");-->
+<!--   tab.setAttribute("id", "pills-"+item);-->
+<!--   tab.setAttribute("role", "tabpanel");-->
+<!--   tab.setAttribute("aria-labelledby", "pills-"+item+"-tab");-->
+<!--   TabContent.appendChild(tab);-->
 
-   var card_row = document.createElement("div");
-   card_row.setAttribute("class", "row wake " +item);
-   card_row.setAttribute("id", item);
-   card_row.setAttribute("name", item);
-   tab.appendChild(card_row);
+<!--   var card_row = document.createElement("div");-->
+<!--   card_row.setAttribute("class", "row wake " +item);-->
+<!--   card_row.setAttribute("id", item);-->
+<!--   card_row.setAttribute("name", item);-->
+<!--   tab.appendChild(card_row);-->
 
 
 
 
-    }
+<!--    }-->
 
 
-function CreateCards(item) {
-                var x = document.querySelectorAll('#'+item.categoria);
-                var url = "{{ url_for( 'uploaded_file', filename='foto' )}}".replace("foto", item.arquivo)
-                var figure = document.createElement("figure");
-                  figure.setAttribute("class", "snip1321");
-                  var img = document.createElement("img");
-                  img.setAttribute("src", url );
-                  figure.appendChild(img);
-                  var a = document.createElement("a");
-                   a.setAttribute("href", item.link);
-                   figure.appendChild(a);
+<!--function CreateCards(item) {-->
+<!--                var x = document.querySelectorAll('#'+item.categoria);-->
+<!--                var url = "{{ url_for( 'uploaded_file', filename='foto' )}}".replace("foto", item.arquivo)-->
+<!--                var figure = document.createElement("figure");-->
+<!--                  figure.setAttribute("class", "snip1321");-->
+<!--                  var img = document.createElement("img");-->
+<!--                  img.setAttribute("src", url );-->
+<!--                  figure.appendChild(img);-->
+<!--                  var a = document.createElement("a");-->
+<!--                   a.setAttribute("href", item.link);-->
+<!--                   figure.appendChild(a);-->
 
-                  all_cards.appendChild(figure);
-                  var figcaption = document.createElement("figcaption");
-  figure.appendChild(figcaption);
+<!--                  all_cards.appendChild(figure);-->
+<!--                  var figcaption = document.createElement("figcaption");-->
+<!--  figure.appendChild(figcaption);-->
 
-  var i = document.createElement("i");
-  i.setAttribute("class", "fab fa-python");
+<!--  var i = document.createElement("i");-->
+<!--  i.setAttribute("class", "fab fa-python");-->
 
-  var h4 = document.createElement("h4");
-  h4.setAttribute("class", "text-inner");
-  h4.appendChild(document.createTextNode(item.linguagem));
-  var p = document.createElement("p");
-   p.appendChild(document.createTextNode(item.nome));
-  figcaption.appendChild(i);
-  figcaption.appendChild(h4);
-  figcaption.appendChild(p);
+<!--  var h4 = document.createElement("h4");-->
+<!--  h4.setAttribute("class", "text-inner");-->
+<!--  h4.appendChild(document.createTextNode(item.linguagem));-->
+<!--  var p = document.createElement("p");-->
+<!--   p.appendChild(document.createTextNode(item.nome));-->
+<!--  figcaption.appendChild(i);-->
+<!--  figcaption.appendChild(h4);-->
+<!--  figcaption.appendChild(p);-->
 
 
 
@@ -465,38 +489,38 @@ function CreateCards(item) {
 
 
 
-                 x.forEach(e => {
+<!--                 x.forEach(e => {-->
 
-                  var figure = document.createElement("figure");
-                  figure.setAttribute("class", "snip1321");
+<!--                  var figure = document.createElement("figure");-->
+<!--                  figure.setAttribute("class", "snip1321");-->
 
-                  var img = document.createElement("img");
-                  img.setAttribute("src", url );
+<!--                  var img = document.createElement("img");-->
+<!--                  img.setAttribute("src", url );-->
 
-                  figure.appendChild(img);
-                  e.appendChild(figure);
-                  var figcaption = document.createElement("figcaption");
-  figure.appendChild(figcaption);
-   var a = document.createElement("a");
+<!--                  figure.appendChild(img);-->
+<!--                  e.appendChild(figure);-->
+<!--                  var figcaption = document.createElement("figcaption");-->
+<!--  figure.appendChild(figcaption);-->
+<!--   var a = document.createElement("a");-->
 
-                   a.setAttribute("href", item.link);
-                   figure.appendChild(a);
+<!--                   a.setAttribute("href", item.link);-->
+<!--                   figure.appendChild(a);-->
 
-  var i = document.createElement("i");
-  i.setAttribute("class", "fab fa-python");
+<!--  var i = document.createElement("i");-->
+<!--  i.setAttribute("class", "fab fa-python");-->
 
-  var h4 = document.createElement("h4");
-  h4.setAttribute("class", "text-inner");
-  h4.appendChild(document.createTextNode(item.linguagem));
-  var p = document.createElement("p");
-   p.appendChild(document.createTextNode(item.nome));
-  figcaption.appendChild(i);
-  figcaption.appendChild(h4);
-  figcaption.appendChild(p);
+<!--  var h4 = document.createElement("h4");-->
+<!--  h4.setAttribute("class", "text-inner");-->
+<!--  h4.appendChild(document.createTextNode(item.linguagem));-->
+<!--  var p = document.createElement("p");-->
+<!--   p.appendChild(document.createTextNode(item.nome));-->
+<!--  figcaption.appendChild(i);-->
+<!--  figcaption.appendChild(h4);-->
+<!--  figcaption.appendChild(p);-->
 
-                   })
+<!--                   })-->
 
-            }
+<!--            }-->
 
 
 </script>
