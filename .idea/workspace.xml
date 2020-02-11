@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/static/uploads/180706_130145660384490_5249290_n.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/uploads/180706_130145660384490_5249290_n.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/NOVALOGOREALIZA1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/uploads/NOVALOGOREALIZA1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/blackmusic.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/uploads/blackmusic.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/cartaz.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/uploads/cartaz.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/uploads/logoLAMARIs2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/uploads/logoLAMARIs2.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/uploads/cartaz.jpg" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,22 +149,22 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1581431968638" />
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581439003447">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1581450348485">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581439003447" />
-    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581439003446">
+    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1581450348485" />
+    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1581450348484">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581439003446" />
-    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581439003445">
+    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1581450348484" />
+    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1581450348483">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581439003445" />
-    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581439003446">
+    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1581450348483" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1581450348484">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581439003446" />
+    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1581450348484" />
     <state x="0" y="147" key="SettingsEditor" timestamp="1579209557258">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
