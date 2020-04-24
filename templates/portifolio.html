@@ -1,17 +1,17 @@
 {% block body %}
 <style>
     #portifolio {
-padding-top:80px;
+
   text-align: center;
-
-
+  BACKGROUND:#F2F2F2;
 
 }
 .section-white{
-height:1200px;}
+height:auto;}
 
 #portifolio h2 {
-font: bold 6vw/86% Raleway;
+font-family: 'Fjalla One', sans-serif;
+font-size:40px;
 color:#E31B6D;
 padding-bottom:17px;
 margin: 0 auto;
@@ -33,16 +33,17 @@ font: bold 0.7em/100% Raleway;
 
 
 #pills-tabContent{
-overflow-y: scroll;
-overflow-x: hidden;
-max-height:880px;
+height:auto;
 margin:0 auto;
-
 padding:20px;
 width:99%;
 }
 
-
+ .nav-tabs .nav-link.active {
+    color: #495057;
+    background-color: #f2f2f2;
+    border-color: #dee2e6 #dee2e6 #f2f2f2;
+}
 
 
 /* width */
@@ -66,13 +67,6 @@ width:99%;
 #pills-tabContent::-webkit-scrollbar-thumb:hover {
   background: #E31B6D;
 }
-
-
-
-
-
-
-
 
 
 
@@ -223,16 +217,13 @@ figure.snip1321.hover:after {
   opacity: 0.9;
 }
 
-
-
-
 #downpage_2{
 position:relative;
 width:60px;
 background:none;
 cursor:pointer;
 margin:0 auto;
-
+padding:40px;
 
 -webkit-animation: downarrow 0.5s ease-in-out infinite;
 			animation: downarrow 0.5s ease-in-out infinite;
@@ -278,11 +269,8 @@ font: bold 0.8em Raleway;
 
 
 @media (max-width: 640px) {
-
 .section-white h2{
-
 font: bold 2.3em/130% Raleway
-
 }
 
 
@@ -325,43 +313,98 @@ ul{
 list-style-type:none;}
 
 
+
+.nto img{
+width: 100%;
+-webkit-box-shadow: 0px 11px 15px -8px rgba(0,0,0,0.69);
+box-shadow: 0px 11px 15px -8px rgba(0,0,0,0.69);
+}
+
+
+
+.hidden_box{
+width:100%;
+height:300px;
+overflow:hidden;
+display: flex;
+    align-items: center; /* vertical */
+    justify-content: center; /* horizontal */
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    margin-bottom:10px;
+
+}
+
+
 </style>
 	<section class="section-white">
         <div id="portifolio" class="container-fluid">
               <h2>PORTIFÓLIO DIGITAL </h2>
             <ul class="nav nav-tabs justify-content-center mb-3 " id="pills-tab" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">TODOS</a>
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">DESIGN GRÁFICO</a>
           </li>
         </ul>
             <div class="tab-content " id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-
-                        <ul class="portifolio_list">
-                            <li class="portifolio_item">
+                    <div class="row">
                         {% for file in files %}
-                          <figure class="still">
-                              <img src="{{ url_for('uploaded_file', filename=file) }}" alt="sq-sample26"/>
-<!--                              <figcaption>-->
-<!--                                  <i class="fab fa-python"></i>-->
-<!--                                    <h4>PYTHON</h4>-->
-<!--                                    <p>Delivery Bot para facebook</p>-->
-<!--                              </figcaption>-->
-<!--                              <a href="#"></a>-->
-                          </figure>
+                        <div class="nto col-md-4">
+                        <div id="hidden_box" class="hidden_box">
+                            <img src="{{ url_for('uploaded_file', filename=file) }}" alt="sq-sample26"/>
+                        </div>
+                            </div>
                         {% endfor %}
-                            </li>
-                            </ul>
-
+                    </div>
                 </div>
             </div>
-            <div id="downpage_2">
-          <a >
-              <i class="fas fa-angle-double-down"></i>
-          </a>
-              </div>
-        </div>
 
+
+
+            <h2>SITES / WEB DEVELOPER </h2>
+            <ul class="nav nav-tabs justify-content-center mb-3 " id="pills-tab2" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" id="pills-home-tab2" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">SITES REALIZADOS</a>
+          </li>
+        </ul>
+            <div class="tab-content " id="pills-tabContent2">
+                <div class="tab-pane fade show active" id="pills-home2" role="tabpanel" aria-labelledby="pills-home-tab">
+                    <div class="row">
+                        <div class="nto col-md-4">
+                            <a href="https://criolina.herokuapp.com/" target="_blank">
+                                <div class="hidden_box">
+                                    <img height="300" src="../static/img/criolina_logo_full.svg" alt="sq-sample26"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="nto col-md-4">
+                            <a href="https://criolina.herokuapp.com/" target="_blank">
+                                <div class="hidden_box">
+                                    <img height="300" src="../static/img/criolina_logo_full.svg" alt="sq-sample26"/>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="nto col-md-4">
+                            <a href="https://webscrappingdebetti.herokuapp.com/" target="_blank">
+                                <div class="hidden_box">
+                                    <img height="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQDqSoHQKcN0UIYUtO-H_z0Byhob4EtxK8jSyM4CW0e0fIYmjs_&usqp=CAU" alt="sq-sample26"/>
+                                </div>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div id="downpage_2">
+                <a>
+                    <i class="fas fa-angle-double-down"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -370,157 +413,6 @@ list-style-type:none;}
 
 
 
-
-<!-- const navbar = document.getElementById('pills-tab');-->
-<!-- const TabContent = document.getElementById('pills-tabContent');-->
-<!-- const portifolio = [];-->
-<!-- const categorias = [];-->
-<!-- const all_cards = document.getElementById("all");-->
-
-
-
-<!--fetch('/portifolio/')-->
-<!--    .then(function (response) {-->
-<!--        return response.json(); // But parse it as JSON this time-->
-<!--    })-->
-<!--    .then(function (data) {-->
-
-<!--        for (var i = 0; i < data.length; i++){-->
-<!--            var obj = data[i];-->
-<!--           portifolio.push(obj)-->
-
-<!--          for (var key in obj){-->
-<!--            var attrName = key;-->
-<!--            var attrValue = obj[key];-->
-
-<!--            if (attrName === 'categoria'){-->
-
-<!--            categorias.push(attrValue);-->
-<!--            }-->
-
-<!--            }-->
-<!--            }-->
-<!--            var uniqueNames = getUnique(categorias);-->
-<!--            uniqueNames.forEach(CreateTabs);-->
-<!--            portifolio.forEach(CreateCards);-->
-<!--    });-->
-
-<!--    function getUnique(array){-->
-<!--        var uniqueArray = [];-->
-<!--        // Loop through array values-->
-<!--        for(i=0; i < array.length; i++){-->
-<!--            if(uniqueArray.indexOf(array[i]) === -1) {-->
-<!--                uniqueArray.push(array[i]);-->
-<!--            }-->
-<!--        }-->
-<!--        return uniqueArray;-->
-<!--    }-->
-
-
-
-<!--function CreateTabs(item) {-->
-
-<!--  var li = document.createElement("li");-->
-<!--  li.setAttribute("class", "nav-item");-->
-<!--  navbar.appendChild(li);-->
-
-<!--   var a = document.createElement("a");-->
-<!--   a.appendChild(document.createTextNode(item));-->
-<!--   a.setAttribute("class", "nav-link");-->
-<!--   a.setAttribute("id", "pills-"+item+"-tab");-->
-<!--   a.setAttribute("data-toggle", "pill");-->
-<!--   a.setAttribute("href", "#pills-"+item);-->
-<!--   a.setAttribute("role", "tab");-->
-<!--   a.setAttribute("aria-controls", "pills-"+item);-->
-<!--   a.setAttribute("aria-selected", "false");-->
-<!--   li.appendChild(a);-->
-
-<!--   var tab = document.createElement("div");-->
-<!--   tab.appendChild(document.createTextNode(item));-->
-<!--   tab.setAttribute("class", "tab-pane fade");-->
-<!--   tab.setAttribute("id", "pills-"+item);-->
-<!--   tab.setAttribute("role", "tabpanel");-->
-<!--   tab.setAttribute("aria-labelledby", "pills-"+item+"-tab");-->
-<!--   TabContent.appendChild(tab);-->
-
-<!--   var card_row = document.createElement("div");-->
-<!--   card_row.setAttribute("class", "row wake " +item);-->
-<!--   card_row.setAttribute("id", item);-->
-<!--   card_row.setAttribute("name", item);-->
-<!--   tab.appendChild(card_row);-->
-
-
-
-
-<!--    }-->
-
-
-<!--function CreateCards(item) {-->
-<!--                var x = document.querySelectorAll('#'+item.categoria);-->
-<!--                var url = "{{ url_for( 'uploaded_file', filename='foto' )}}".replace("foto", item.arquivo)-->
-<!--                var figure = document.createElement("figure");-->
-<!--                  figure.setAttribute("class", "snip1321");-->
-<!--                  var img = document.createElement("img");-->
-<!--                  img.setAttribute("src", url );-->
-<!--                  figure.appendChild(img);-->
-<!--                  var a = document.createElement("a");-->
-<!--                   a.setAttribute("href", item.link);-->
-<!--                   figure.appendChild(a);-->
-
-<!--                  all_cards.appendChild(figure);-->
-<!--                  var figcaption = document.createElement("figcaption");-->
-<!--  figure.appendChild(figcaption);-->
-
-<!--  var i = document.createElement("i");-->
-<!--  i.setAttribute("class", "fab fa-python");-->
-
-<!--  var h4 = document.createElement("h4");-->
-<!--  h4.setAttribute("class", "text-inner");-->
-<!--  h4.appendChild(document.createTextNode(item.linguagem));-->
-<!--  var p = document.createElement("p");-->
-<!--   p.appendChild(document.createTextNode(item.nome));-->
-<!--  figcaption.appendChild(i);-->
-<!--  figcaption.appendChild(h4);-->
-<!--  figcaption.appendChild(p);-->
-
-
-
-
-
-
-
-<!--                 x.forEach(e => {-->
-
-<!--                  var figure = document.createElement("figure");-->
-<!--                  figure.setAttribute("class", "snip1321");-->
-
-<!--                  var img = document.createElement("img");-->
-<!--                  img.setAttribute("src", url );-->
-
-<!--                  figure.appendChild(img);-->
-<!--                  e.appendChild(figure);-->
-<!--                  var figcaption = document.createElement("figcaption");-->
-<!--  figure.appendChild(figcaption);-->
-<!--   var a = document.createElement("a");-->
-
-<!--                   a.setAttribute("href", item.link);-->
-<!--                   figure.appendChild(a);-->
-
-<!--  var i = document.createElement("i");-->
-<!--  i.setAttribute("class", "fab fa-python");-->
-
-<!--  var h4 = document.createElement("h4");-->
-<!--  h4.setAttribute("class", "text-inner");-->
-<!--  h4.appendChild(document.createTextNode(item.linguagem));-->
-<!--  var p = document.createElement("p");-->
-<!--   p.appendChild(document.createTextNode(item.nome));-->
-<!--  figcaption.appendChild(i);-->
-<!--  figcaption.appendChild(h4);-->
-<!--  figcaption.appendChild(p);-->
-
-<!--                   })-->
-
-<!--            }-->
 
 
 </script>

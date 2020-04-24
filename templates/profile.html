@@ -1,199 +1,86 @@
-
-
 {% block body %}
 
-  <style>
+<style>
 
 /* # Section Black, White
 ================================ */
-.section-black {
-	 background:  url("http://victory-design.ru/sandbox/codepen/profile_card/bg.png") no-repeat center center fixed;}
-}
-
-
-
-
-
-
-/* # container fluid
-================================ */
-.conteudo{
-position:relative;
-
-}
-
-
-/* #  CARD PERFIL
-================================ */
-
-.perfilcard {
+.grafico_div{
+width:100%;
 margin:0 auto;
- width: 350px;
- opacity:0.88;
- border:none;
- border-top-left-radius: 49px;
-    border-top-right-radius: 49px;
-     -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
-    box-shadow: 0 0 10px 0 rgba(0,0,0,0.40);
-    position:relative;
-    margin-top:17%;
-
-
+background:#f2f2f2;
+padding:top:50px;
 }
-
-
-.profile-photo {
-    margin: 0 auto;
-    height: 260px;
-    width: 260px;
-    margin-top:20px;
-    border: 7px solid #04C2C9;
-    -webkit-border-radius: 500px;
-    -moz-border-radius: 500px;
-    border-radius: 500px;
-    -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
-    -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
-    box-shadow: 0 0 20px 0 rgba(0,0,0,0.25);
-
-  }
-
-#perfilcard img{
-position: relative;
-   max-width: 185px;
-   opacity:10;
-  margin:0 auto;
-
-  -webkit-border-radius: 500px;
-      -moz-border-radius: 500px;
-      border-radius: 500px;
-      width: 100%;
-}
-
-
-
-.leve{
-position: relative;
-color: #04C2C9;
-top:28px;
-width: 100%;
-margin: 0 auto;
-font: bold 5.0em/80% Raleway;
-text-transform: uppercase;
-letter-spacing: 1px;
-margin-top:-15px;
-padding:2px;
-text-shadow: 3px 3px rgba(0,0,0,0.14);
-    }
-
-.mudar {
-color:#E31B6D;
-font: bold 7.3em/80% Raleway;
-text-shadow: 3px 3px rgba(0,0,0,0.14);
-}
-
-
-.lead2{
-color: #404040;
-font: bold 0.8em/110% Raleway;
-position: relative;
-letter-spacing: 2px;
-    text-transform: uppercase;
-    padding:20px 20px 0px 20px;
-    margin-top:15px;
-
-    }
-
-.perfil {
-position:relative;
-    padding: 23px;
-    width:100%;
-    background: #04C2C9;
-    color: #FFFFFF;
-    border:none;
-    text-decoration: none;
-    font: bold 1em Raleway;
-    letter-spacing: 2px;
-    cursor:pointer;
-    text-transform: uppercase;
-    }
-
-.perfil:hover{
- background: #E31B6D;
-}
-
-
-
-/* #  CARD GRAFICS
-================================ */
 
 .graficscard{
-margin:0 auto;
+margin:70px auto;
  opacity:0.88;
-width:550px;
+width:97%;
+max-width:760px;
+height:100%;
  border:none;
- border-top-left-radius: 49px;
-    border-top-right-radius: 49px;
      -webkit-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
     -moz-box-shadow: 0 0 2px 0 rgba(0,0,0,0.25);
     box-shadow: 0 0 10px 0 rgba(0,0,0,0.40);
-     position:relative;
-    top:14%;
-    right:5%;
+
+
 }
 
 .habilidades {
-font: bold 4.0em Raleway;
-text-transform: uppercase;
+font-family: 'Fjalla One', sans-serif;
+font-size:45px;
 color:#E31B6D;
-letter-spacing: 1px;
 margin-top:25px;
-text-shadow: 3px 3px rgba(0,0,0,0.14);
+margin:0 auto;
+padding:25px;
+text-transform:uppercase;
+text-shadow: 1px 1px rgba(0,0,0,0.2);
 }
 
-.piano {
-margin-top:2px;
-}
+
 
 .control-label {
 color: #ff8000;
 margin-top:-20px;
 position: relative;
     margin: 10px 0;
-    font: bold 0.7em/100% Raleway;
-    letter-spacing: 2px;
-    text-transform: uppercase;
+   font-family: 'Fjalla One', sans-serif;
+font-size:0.7em;
+
+
+
 }
 
 .atividadebox {
 background:#E31B6D;
 width: 25%;
-height: 30px;
+height: 33px;
 }
 .atividade {
 color:white;
+font-family: 'Fjalla One', sans-serif;
     text-align: center;
-     margin: 5px auto;
-     font-size:13px;
-      text-transform: uppercase;
+     margin: 3px auto;
+     font-size:16px;
+     text-transform: lowercase;
+      text-transform: capitalize;
 }
 .SkillBar {
     width: 75%;
     height: 30px;
     position: relative;
-    background: rgba(17, 17, 17, .3);
+
 }
 
 .PercentText {
     z-index: 3;
     position: relative;
     padding-right: 15px;
-    margin-top: 7px;
+    margin-top: 5px;
     float: right;
     text-shadow: none;
     color: #fff;
-    font-family: Lato-Regular, sans-serif;
-    font-size: 13px;
+    font-family: 'Fjalla One', sans-serif;
+    font-size: 14px;
 }
 
 
@@ -219,28 +106,24 @@ font-size:40pt;
 }
 
 .icon h5{
-font: bold 1.1em/130% Fjalla One;
+    font-family: 'Fjalla One', sans-serif;
+    font-size:22px;
 color:#FFFFFF;
 margin-top:-15px;
-letter-spacing: 0.9px
+
 
 }
 
 .icon p{
 font: bold 0.75em/100% Raleway;
 color:#FFFFFF;
-margin-top:-9px;
+margin-top:-3px;
+font-weight:400;
 
 
 }
 
 
-.modal {
-  text-align: center;
-}
-#grafico {
-display: none;
-}
 
 
 
@@ -384,46 +267,6 @@ text-transform: uppercase;
 
 
 
-/* #  MEDIA SMARTPHONES
-================================ */
-@media only screen and (max-width: 600px) {
-
-
-
-#exclui{
-display:none;}
-
-
-
-.perfilcard {
- width: 100%;
- margin-top:5%;
-
-}
-
-.title{
-display:flex;}
-
-#grafico {
-display: initial;
-padding-top:5px;
-}
-
-.leve{
-font-size:60px;
-margin-bottom:10px;
-
-}
-
-
-.perfil{
-padding:30px;}
-
-
-#grafico{
-padding:30px;}
-
-}
 
 
 
@@ -431,458 +274,575 @@ padding:30px;}
 
 
 
-  </style>
-  <body>
-  	  <section class="section-black">
-
-			 <div class="container-fluid conteudo">
-                 <div class="row">
-                    <div class="col">
-                        <div id="perfilcard" class="card perfilcard">
-                            <div class="profile-photo">
-                                <img src="./static/img/image.png">
-                            </div>
-                            <div class="title">
-                            <h1 class="leve">Sobre Mim</h1>
-
-                                </div>
-                            <p class="lead2">
-                                Oi! Eu sou um web designer/desenvolvedor localizado em Figueira da Foz, Portugal. Tenho uma paixão por designer e amor por criar conteúdo web , mobile e artes digitais.
-                            </p>
-                            <button type="button" class="perfil" data-toggle="modal" data-target="#staticBackdrop2"> <a>Currículo completo</a></button>
-<button type="button" id="grafico" class="btn btn-info btn-lg perfil" data-toggle="modal" data-target="#myModal">Skills / Habilidades</button>
-<!--                            <button  type="button"  class="" data-toggle="modal" data-target="#staticBackdrop"> <a  href="#"></a></button>-->
-                        </div>
-                    </div>
-                     <div id="exclui" class="col">
-                         {% include 'grafico.html' %}
-                     </div>
-                 </div>
-             </div>
-
-          <div id="downpage">
-          <a >
-              <i class="fas fa-angle-double-down"></i>
-          </a>
-              </div>
-
-      </section>
-
-
-   <!-- Modal  GRAFICOS-->
-
-         <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title ">Habilidades</h4>
-      </div>
-      <div class="modal-body">
-        <div  id="modal_grafic" class="">
-
-                      <div class="container-fluid gfc">
-
-                        <div class="row piano">
+</style>
+<body>
+<!--<section class="section-black text-center">-->
+<div class="grafico_div">
+    <div class="card graficscard ">
+        <h5 class="habilidades">Habilidades </h5>
+        <div class="container-fluid gfc">
+            <div class="row piano">
                             <span class="atividadebox">
                                 <div class="atividade">PYTHON</div>
                             </span>
-                            <div class="SkillBar">
-                            <div id="Skill-PYTHON">
-                            <span class="PercentText ">85%</span>
-                            </div>
-                            </div>
-                         </div>
-                        <div class="row piano">
+                <div class="SkillBar">
+                    <div id="Skill-PYTHON">
+                        <span class="PercentText ">85%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
     <span class="atividadebox"
     ><div class="atividade">HTML</div></span>
-                      <div class="SkillBar">
-    <div id="Skill-HTML">
-      <span class="PercentText ">90%</span>
-    </div>
-  </div>
-     </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">CSS/CSS3</div></span>
-  <div class="SkillBar">
-    <div id="Skill-CSS">
-      <span class="PercentText ">75%</span>
-    </div>
-  </div>  </div>
-                        <div class="row piano">
+                <div class="SkillBar">
+                    <div id="Skill-HTML">
+                        <span class="PercentText ">90%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">CSS/CSS3</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-CSS">
+                        <span class="PercentText ">75%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
     <span class="atividadebox">
         <div class="atividade">jQuery</div>
     </span>
-  <div class="SkillBar">
-    <div id="Skill-jQuery">
-      <span class="PercentText ">40%</span>
+                <div class="SkillBar">
+                    <div id="Skill-jQuery">
+                        <span class="PercentText ">40%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">Javascript</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-JS">
+                        <span class="PercentText ">65%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">SQL</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-SQL">
+                        <span class="PercentText ">80%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">UI Design</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-PHP">
+                        <span class="PercentText ">65%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">PHOTOSHOP</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-VBNET">
+                        <span class="PercentText ">90%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">ILUSTRATOR</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-ILUSTRATOR">
+                        <span class="PercentText ">85%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">LOGIC PRO</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-AUDIO">
+                        <span class="PercentText ">80%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row piano">
+                <span class="atividadebox"><div class="atividade">PREMIERE</div></span>
+                <div class="SkillBar">
+                    <div id="Skill-ADOBE">
+                        <span class="PercentText ">75%</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid tag">
+            <div class="row icoooo">
+                <div class="col icon">
+                    <i class="mdi mdi-speedometer"></i>
+                    <h5>FASTER</h5>
+                    <p>Fast load times and lag free interaction, my highest priority.</p>
+                </div>
+                <div class="col icon">
+                    <i class="mdi mdi-cellphone-link"></i>
+                    <h5>INTUITIVE</h5>
+                    <p>Strong preference for easy to use, intuitive UX/UI.</p>
+                </div>
+                <div class="col icon">
+                    <i class="mdi mdi-lightbulb-outline"></i>
+                    <h5>CREATIVE</h5>
+                    <p>My layouts will work on any device, big or small.</p>
+                </div>
+                <div class="col icon">
+                    <i class="mdi mdi-rocket"></i>
+                    <h5>DYNAMIC</h5>
+                    <p>Websites don't have to be static, I love making pages come to life.</p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-      </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">Javascript</div></span>
-  <div class="SkillBar">
-    <div id="Skill-JS">
-      <span class="PercentText ">65%</span>
     </div>
-  </div>
-    </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">SQL</div></span>
-    <div class="SkillBar">
-    <div id="Skill-SQL">
-      <span class="PercentText ">80%</span>
-    </div>
-  </div>
- </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">UI Design</div></span>
-    <div class="SkillBar">
-    <div id="Skill-PHP">
-      <span class="PercentText ">65%</span>
-    </div>
-  </div>
-      </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">PHOTOSHOP</div></span>
-                      <div class="SkillBar">
-    <div id="Skill-VBNET">
-      <span class="PercentText ">90%</span>
-    </div>
-  </div>
-                           </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">ILUSTRATOR</div></span>
-                      <div class="SkillBar">
-    <div id="Skill-ILUSTRATOR">
-      <span class="PercentText ">85%</span>
-    </div>
-  </div>
-                          </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">LOGIC PRO</div></span>
-                      <div class="SkillBar">
-    <div id="Skill-AUDIO">
-      <span class="PercentText ">80%</span>
-    </div>
-  </div>
-                   </div>
-                        <div class="row piano">
-    <span class="atividadebox"><div class="atividade">PREMIERE</div></span>
-                      <div class="SkillBar">
-    <div id="Skill-ADOBE">
-      <span class="PercentText ">75%</span>
-    </div>
-  </div>
+<!--</section>-->
+
+
+<!-- Modal  GRAFICOS-->
+
+<!--      <div id="myModal" class="modal fade" role="dialog">-->
+<!--          <div class="modal-dialog">-->
+
+<!--              &lt;!&ndash; Modal content&ndash;&gt;-->
+<!--              <div class="modal-content">-->
+<!--                  <div class="modal-header">-->
+<!--                      <button type="button" class="close" data-dismiss="modal">&times;</button>-->
+<!--                      <h4 class="modal-title ">Habilidades</h4>-->
+<!--                  </div>-->
+<!--                  <div class="modal-body">-->
+<!--                      <div id="modal_grafic" class="">-->
+
+<!--                          <div class="container-fluid gfc">-->
+
+<!--                              <div class="row piano">-->
+<!--                            <span class="atividadebox">-->
+<!--                                <div class="atividade">PYTHON</div>-->
+<!--                            </span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-PYTHON">-->
+<!--                                          <span class="PercentText ">85%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--    <span class="atividadebox"-->
+<!--    ><div class="atividade">HTML</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-HTML">-->
+<!--                                          <span class="PercentText ">90%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">CSS/CSS3</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-CSS">-->
+<!--                                          <span class="PercentText ">75%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--    <span class="atividadebox">-->
+<!--        <div class="atividade">jQuery</div>-->
+<!--    </span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-jQuery">-->
+<!--                                          <span class="PercentText ">40%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">Javascript</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-JS">-->
+<!--                                          <span class="PercentText ">65%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">SQL</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-SQL">-->
+<!--                                          <span class="PercentText ">80%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">UI Design</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-PHP">-->
+<!--                                          <span class="PercentText ">65%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">PHOTOSHOP</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-VBNET">-->
+<!--                                          <span class="PercentText ">90%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">ILUSTRATOR</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-ILUSTRATOR">-->
+<!--                                          <span class="PercentText ">85%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">LOGIC PRO</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-AUDIO">-->
+<!--                                          <span class="PercentText ">80%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                              <div class="row piano">-->
+<!--                                  <span class="atividadebox"><div class="atividade">PREMIERE</div></span>-->
+<!--                                  <div class="SkillBar">-->
+<!--                                      <div id="Skill-ADOBE">-->
+<!--                                          <span class="PercentText ">75%</span>-->
+<!--                                      </div>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                          <div class="container-fluid tag">-->
+<!--                              <div class="row icoooo">-->
+<!--                                  <div class="col icon">-->
+<!--                                      <i class="mdi mdi-speedometer"></i>-->
+<!--                                      <h5>FASTER</h5>-->
+<!--                                      <p>Fast load times and lag free interaction, my highest priority.</p>-->
+<!--                                  </div>-->
+<!--                                  <div class="col icon">-->
+<!--                                      <i class="mdi mdi-cellphone-link"></i>-->
+<!--                                      <h5>INTUITIVE</h5>-->
+<!--                                      <p>Strong preference for easy to use, intuitive UX/UI.</p>-->
+<!--                                  </div>-->
+<!--                                  <div class="col icon">-->
+<!--                                      <i class="mdi mdi-lightbulb-outline"></i>-->
+<!--                                      <h5>CREATIVE</h5>-->
+<!--                                      <p>My layouts will work on any device, big or small.</p>-->
+<!--                                  </div>-->
+<!--                                  <div class="col icon">-->
+<!--                                      <i class="mdi mdi-rocket"></i>-->
+<!--                                      <h5>DYNAMIC</h5>-->
+<!--                                      <p>Websites don't have to be static, I love making pages come to life.</p>-->
+<!--                                  </div>-->
+<!--                              </div>-->
+<!--                          </div>-->
+<!--                      </div>-->
+<!--                  </div>-->
+<!--                  <div class="modal-footer">-->
+<!--                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>-->
+<!--                  </div>-->
+<!--              </div>-->
+
+<!--          </div>-->
+<!-- Modal  CURRICULO-->
+<div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog"
+     aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel2">CURRÍCULO</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#details" data-toggle="tab">Info Geral</a></li>
+                <li><a href="#educacao" data-toggle="tab">Educação</a></li>
+                <li><a href="#networking" data-toggle="tab">Experiências</a></li>
+
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="details">
+                    <div class="control-group">
+                        <label class="control-label">INFORMAÇÕES PESSOAL</label>
+                        <div class="container-fluid top">
+                            <h2> Rafael Santos de Almeida</h2>
+                            <hr>
+                            <div class="row">
+                                <div class="col"><h6 style="color:#ff8000;">SEXO:</h6></div>
+                                <div class="col"><h6 style="color:#ff8000;">DATA DE NASCIMENTO:</h6></div>
+                                <div class="col"><h6 style="color:#ff8000;">NACIONALIDADE:</h6></div>
                             </div>
-                      </div>
-                      <div class="container-fluid tag">
-                          <div class="row icoooo">
-                              <div class="col icon">
-                                  <i class="mdi mdi-speedometer"></i>
-                                  <h5>FASTER</h5>
-                                  <p>Fast load times and lag free interaction, my highest priority.</p>
-                              </div>
-                              <div class="col icon">
-                                  <i class="mdi mdi-cellphone-link"></i>
-                                  <h5>INTUITIVE</h5>
-                                  <p>Strong preference for easy to use, intuitive UX/UI.</p>
-                              </div>
-                              <div class="col icon">
-                                  <i class="mdi mdi-lightbulb-outline"></i>
-                                  <h5>CREATIVE</h5>
-                                  <p>My layouts will work on any device, big or small.</p>
-                              </div>
-                              <div class="col icon">
-                                  <i class="mdi mdi-rocket"></i>
-                                  <h5>DYNAMIC</h5>
-                                  <p>Websites don't have to be static, I love making pages come to life.</p>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
 
-  </div>
-</div>
+                            <div class="row">
+                                <div class="col"><h6>Masculino</h6></div>
+                                <div class="col"><h6>17/03/1984 - 36 ANOS</h6></div>
+                                <div class="col"><h6>PORTUGAL / BRASIL:</h6></div>
+                            </div>
 
-  <!-- Modal  CURRICULO-->
-    <div class="modal fade" id="staticBackdrop2" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel2">CURRÍCULO</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-        <ul  class="nav nav-tabs" >
-   <li class="active"><a href="#details" data-toggle="tab">Info Geral</a></li>
-    <li><a href="#educacao" data-toggle="tab">Educação</a></li>
-    <li><a href="#networking" data-toggle="tab">Experiências</a></li>
+                            <div class="row">
+                                <div class="col"><h6 style="color:#ff8000;"><i class="fas fa-map-marker-alt"></i>MORADA
+                                </h6></div>
+                                <div class="col"><h6 style="color:#ff8000;"><i class="fas fa-mobile-alt"></i>TELEMÓVEL
+                                </h6></div>
+                                <div class="col"><h6 style="color:#ff8000;"><i class="fas fa-at"></i>E-MAIL</h6></div>
+                            </div>
 
-</ul>
-     <div class="tab-content">
-    <div class="tab-pane active" id="details">
-       <div class="control-group">
-           <label class="control-label">INFORMAÇÕES PESSOAL</label>
-           <div class="container-fluid top">
-               <h2> Rafael Santos de Almeida</h2>
-               <hr>
-               <div class="row">
-  <div class="col"> <h6 style="color:#ff8000;">SEXO:</h6></div>
-  <div class="col"> <h6 style="color:#ff8000;">DATA DE NASCIMENTO:</h6></div>
-  <div class="col"> <h6 style="color:#ff8000;">NACIONALIDADE:</h6></div>
-</div>
+                            <div class="row">
+                                <div class="col class"><h6>AV. BRASIL 244, 2ºC - FIGUEIRA DA FOZ</h6></div>
+                                <div class="col"><h6><a style="font-size:8pt;color:#888888;"
+                                                        href="tel:(+351)913-791-870">(+351)913-791-870</a></h6></div>
+                                <div class="col class"><h6><a style="font-size:8pt;" href="mailto:raggaxe@gmail.com">raggaxe@gmail.com </a>
+                                </h6>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row icones">
+                                <div class="col"><i class="fab fa-instagram"></i></div>
+                                <div class="col"><i class="fab fa-facebook"></i></div>
+                                <div class="col"><i class="fab fa-whatsapp"></i></div>
+                                <div class="col"><i class="fab fa-skype"></i></div>
+                                <div class="col"><i class="fab fa-linkedin"></i></div>
+                                <div class="col"><i class="fab fa-github"></i></div>
+                            </div>
+                        </div>
 
-                <div class="row">
-  <div class="col"> <h6 >Masculino</h6></div>
-  <div class="col"> <h6 >17/03/1984 - 36 ANOS</h6></div>
-  <div class="col"> <h6 >PORTUGAL / BRASIL:</h6></div>
-</div>
-
-                <div class="row">
-  <div class="col"> <h6 style="color:#ff8000;"><i class="fas fa-map-marker-alt"></i>MORADA</h6></div>
-  <div class="col"> <h6 style="color:#ff8000;"><i class="fas fa-mobile-alt"></i>TELEMÓVEL</h6></div>
-  <div class="col"> <h6 style="color:#ff8000;"><i class="fas fa-at"></i>E-MAIL</h6></div>
-</div>
-
-               <div class="row">
-  <div class="col class"> <h6 >AV. BRASIL 244, 2ºC - FIGUEIRA DA FOZ</h6></div>
-  <div class="col"> <h6 ><a style="font-size:8pt;color:#888888;"href="tel:(+351)913-791-870">(+351)913-791-870</a></h6></div>
-  <div class="col class"> <h6><a style="font-size:8pt;" href="mailto:raggaxe@gmail.com">raggaxe@gmail.com </a></h6>
-             </div>
-</div>
-<hr>
-                <div class="row icones">
-  <div class="col"> <i class="fab fa-instagram"></i></div>
-  <div class="col"> <i class="fab fa-facebook"></i></div>
-  <div class="col">  <i class="fab fa-whatsapp"></i></div>
-                     <div class="col">   <i class="fab fa-skype"></i></div>
-                    <div class="col"> <i class="fab fa-linkedin"></i></div>
-                     <div class="col">    <i class="fab fa-github"></i></div>
-</div>
-           </div>
-
-       </div>
-    </div>
-
-    <div class="tab-pane" id="educacao">
-           <label class="control-label">ESCOLARIDADE</label>
-        <div class="container-fluid top">
-        <h6 style="color:#ff8000;"> Bacharel em Comunicação Social </h6>
-        <h3> Publicidade e Marketing</h3>
-
-            <div class="link">
-               <a  href="https://www.iesb.br/graduacao/curso/publicidade-e-propaganda">Instituto de Educação Superior de Brasília</a>
-            </div>
-            <div style="margin:0 auto;" class="row class">
-                <div class="col">
-                    <a  href="https://www.google.pt/maps/place/IESB+Sul/@-15.8349713,-47.9128893,17z/data=!3m1!4b1!4m5!3m4!1s0x935a255ac54e5865:0xccb35721f77a92e8!8m2!3d-15.8349713!4d-47.9128893"><i class="fas fa-map-marker-alt"></i> IESB | Brasilia - Brasil</a>
+                    </div>
                 </div>
-                 <div class="col ver">
-                <a>Ver diploma</a>
-                 </div>
-            </div>
 
+                <div class="tab-pane" id="educacao">
+                    <label class="control-label">ESCOLARIDADE</label>
+                    <div class="container-fluid top">
+                        <h6 style="color:#ff8000;"> Bacharel em Comunicação Social </h6>
+                        <h3> Publicidade e Marketing</h3>
+
+                        <div class="link">
+                            <a href="https://www.iesb.br/graduacao/curso/publicidade-e-propaganda">Instituto de Educação
+                                Superior de Brasília</a>
+                        </div>
+                        <div style="margin:0 auto;" class="row class">
+                            <div class="col">
+                                <a href="https://www.google.pt/maps/place/IESB+Sul/@-15.8349713,-47.9128893,17z/data=!3m1!4b1!4m5!3m4!1s0x935a255ac54e5865:0xccb35721f77a92e8!8m2!3d-15.8349713!4d-47.9128893"><i
+                                        class="fas fa-map-marker-alt"></i> IESB | Brasilia - Brasil</a>
+                            </div>
+                            <div class="col ver">
+                                <a>Ver diploma</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <label class="control-label">CURSOS COMPLEMENTARES</label>
+                    <div class="container-fluid top jinja">
+                        <h3> Designer Gráfico - Certificado Adobe </h3>
+                        <div class="link">
+                            <a href="https://www.studioonline.com.br/curso-de-criacao-publicitaria-studio-online-2/">
+                                Studio On-line</a>
+                        </div>
+                        <h6> Photoshop - Illustrator - Indesigner - Premiere - Flash </h6>
+                        <div style="margin:0 auto;" class="row class">
+
+                            <div class="col">
+                                <a href="https://www.google.pt/maps/place/Studio+Online/@-15.7519242,-47.8950715,17z/data=!3m1!4b1!4m5!3m4!1s0x935a32e91afd6947:0xb470c01a3457e589!8m2!3d-15.7519242!4d-47.8950715"><i
+                                        class="fas fa-map-marker-alt"></i> studio online | Brasilia - Brasil</a>
+                            </div>
+                            <div class="col ver">
+                                <a>Ver certificado</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container-fluid top">
+                        <h3> Desenho a Mão </h3>
+                        <div class="link">
+                            <a href="https://www.msdesenhos.com.br/"> MS Desenhos</a>
+                        </div>
+                        <div style="margin:0 auto;" class="row class">
+                            <div class="col">
+                                <a href="https://www.google.pt/maps/place/Ms+Ayrton+Arquitetura/@-15.831108,-47.9241304,17z/data=!3m1!4b1!4m5!3m4!1s0x935a3aaf36ac0001:0x381c28203103f63f!8m2!3d-15.831108!4d-47.9241304"><i
+                                        class="fas fa-map-marker-alt"></i> Ms Desenhos | Brasilia - Brasil</a>
+                            </div>
+                            <div class="col ver">
+                                <a>Ver certificado</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="container-fluid top">
+                        <h3> Agente Cultural do Distrito Federal </h3>
+                        <div class="link">
+                            <a href="http://www.cultura.df.gov.br/">Agente Cultural credenciado pelo Governo Federal</a>
+                        </div>
+                        <div style="margin:0 auto;" class="row class">
+                            <div class="col">
+                                <div class="col">
+                                    <a href="https://www.google.pt/maps/place/Secretaria+de+Estado+de+Cultura+e+Economia+Criativa+do+Distrito+Federal/@-15.7914499,-47.8799658,17z/data=!3m1!4b1!4m5!3m4!1s0x935a3b1dae1f4dd7:0xeb6e5ba4d223500a!8m2!3d-15.7914499!4d-47.8799658"><i
+                                            class="fas fa-map-marker-alt"></i> FAC | Brasilia - Brasil</a>
+                                </div>
+                            </div>
+                            <div class="col ver">
+                                <a>Ver certificado</a>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <label class="control-label">@rafael_axe</label>
+                </div>
+
+                <div class="tab-pane" id="networking">
+                    <label class="control-label">EXPERIÊNCIAS DE TRABALHO</label>
+                    <div class="container-fluid top">
+                        <h3> Diretor de Arte | Design Gráfico </h3>
+                        <div class="link">
+                            <a href="https://g3.com.br"> Agência G3 Comunicação - Brasília</a>
+                        </div>
+                        <h6>Responsável, ao lado do redator, por criar caminhos de comunicação e conceitos interessantes
+                            para campanhas publicitárias digitais e suas ramificações.</h6>
+                    </div>
+
+                    <div class="container-fluid top">
+                        <h3> Diretor de Arte | Design Gráfico </h3>
+                        <div class="link">
+                            <a> Agência 71 Comunicação - Brasília</a>
+
+                        </div>
+
+                        <h6>Responsável por coordenar a equipe de criação, estudando a melhor forma de resolver a
+                            problemática trazida pelos diversos tipos de clientes.</h6>
+                    </div>
+
+                    <div class="container-fluid top">
+                        <h3> Silk-Screen | Design Gráfico </h3>
+                        <div class="link">
+                            <a href="https://instagram.com/lojaexodus">Exodus Confecções de Roupas e Acessórios-
+                                Brasília</a>
+                        </div>
+                        <h6>Experiência incrível de integrar a arte digital em estampas criativas, sempre com o desafio
+                            de seguir um conceito já estabelecido pela marca. </h6>
+                    </div>
+                    <div class="container-fluid top">
+                        <h3> Captação de Áudio em Filmes </h3>
+                        <div class="link">
+                            <a href="https://instagram.com/lojaexodus">Patrick de Jongh</a>
+                        </div>
+                        <h6>Gravação do Áudio direto em filmes, ao lado de Patrick de Jongh - engenheiro de som e
+                            produtor musical. Graduado em produção musical pelo Conservatório de Roterdam (Holanda) e
+                            pós-graduado em Engenharia de Áudio e Engenharia Acústica pelo SAE – de Londres
+                            (Inglaterra). </h6>
+
+                        <label class="control-label">Filmes</label>
+                        <div class="row movie">
+                            <div class="col">
+                                <a role="button" href="https://www.imdb.com/title/tt1611807/?ref_=nm_flmg_snd_8"
+                                   class="btn filme">
+                                    <h2>A Gruta - Filme Interativo (2008)</h2>
+                                    <p>46min | Horror, Thriller | 21 November 2008 (Brazil)</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="https://www.imdb.com/title/tt1723704/?ref_=nm_flmg_snd_7"
+                                   class="btn filme">
+                                    <h2>A Janela (2010)</h2>
+                                    <p>10min | Short, Drama | August 2010 (USA)</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_6"
+                                   class="btn filme">
+                                    <h2>Um Assalto de Fé (2011)</h2>
+                                    <p>11h 36min | Comedy | 2 December 2011 (Brazil)</p>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row movie ">
+                            <div class="col">
+                                <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_5"
+                                   class="btn filme">
+                                    <h2>Angélica Acorrentada (2012)</h2>
+                                    <p>11h 36min | Comedy | 2 December 2011 (Brazil)</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_4"
+                                   class="btn filme">
+                                    <h2>Um ano novo danado de bom (2014)</h2>
+                                    <p>119min | Short, Fantasy (Brazil)</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="http://portacurtas.org.br/filme/?name=senhoras9745"
+                                   class="btn filme">
+                                    <h2>Senhoras (2010)</h2>
+                                    <p>10min | Ficção | (Brazil)</p>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="row movie">
+                            <div class="col">
+                                <a role="button" href="http://portacurtas.org.br/filme/?name=senhoras9745"
+                                   class="btn filme">
+                                    <h2>Senhoras (2010)</h2>
+                                    <p>10min | Ficção | (Brazil)</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="https://souzaty.com/project/pedra-do-mal/"
+                                   class="btn filme">
+                                    <h2>Pedra do Mal (2013)</h2>
+                                    <p>1h10min | Documentário | (Brazil)</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="container-fluid top">
+                        <h3> Coordenador de Equipe em Eventos </h3>
+                        <div class="link">
+                            <a href="https://instagram.com/lojaexodus">Produtor de Evento</a>
+                        </div>
+                        <h6>Basicamente, o organizador de eventos é aquele profissional responsável por planejar,
+                            sistematizar e produzir qualquer tipo de evento: conferências, palestras, feiras e jantares
+                            corporativos, dentre outras possibilidades.</h6>
+                        <div class="row movie">
+                            <div class="col">
+                                <a role="button" href="https://www.detran.df.gov.br/acoes-educativas-de-transito/"
+                                   class="btn filme">
+                                    <h2>Detran - DF</h2>
+                                    <p>Departamento de Trânsito do Distrito Federal</p>
+                                </a>
+                            </div>
+                            <div class="col">
+                                <a role="button" href="#"
+                                   class="btn filme">
+                                    <h2>Prefeitura do Setor de Diversões Sul </h2>
+                                    <p>Governo de Brasília</p>
+                                </a>
+                            </div>
+                        </div>
+                        <hr>
+
+                        <label class="control-label">COMPETÊNCIAS</label>
+                        <h3>COMPETÊNCIAS de COMUNICAÇÃO</h3>
+                        <h6>Possuo forte habilidade de comunicação, conseguindo estabelecer ótima relação
+                            com meus colegas de trabalho, tenho experiência em me adaptar rapidamente a novos
+                            conhecimentos
+                            e instruções ou situações de imprevisto, acredito que trabalhar em equipe ajuda a alcançar
+                            um objetivo</h6>
+
+                    </div>
+
+                </div>
+            </div>
         </div>
 
-        <label class="control-label">CURSOS COMPLEMENTARES</label>
-        <div class="container-fluid top jinja">
-             <h3> Designer Gráfico - Certificado Adobe </h3>
-              <div class="link">
-               <a  href="https://www.studioonline.com.br/curso-de-criacao-publicitaria-studio-online-2/"> Studio On-line</a>
-            </div>
-        <h6> Photoshop - Illustrator - Indesigner - Premiere - Flash </h6>
-             <div style="margin:0 auto;" class="row class">
-
-               <div class="col">
-                    <a  href="https://www.google.pt/maps/place/Studio+Online/@-15.7519242,-47.8950715,17z/data=!3m1!4b1!4m5!3m4!1s0x935a32e91afd6947:0xb470c01a3457e589!8m2!3d-15.7519242!4d-47.8950715"><i class="fas fa-map-marker-alt"></i> studio online | Brasilia - Brasil</a>
-                </div>
-                 <div class="col ver">
-                <a>Ver certificado</a>
-                 </div>
-            </div>
-        </div>
-<hr>
-        <div  class="container-fluid top">
-             <h3> Desenho a Mão </h3>
-             <div class="link">
-               <a  href="https://www.msdesenhos.com.br/"> MS Desenhos</a>
-            </div>
-            <div style="margin:0 auto;" class="row class">
-                <div class="col">
-                    <a  href="https://www.google.pt/maps/place/Ms+Ayrton+Arquitetura/@-15.831108,-47.9241304,17z/data=!3m1!4b1!4m5!3m4!1s0x935a3aaf36ac0001:0x381c28203103f63f!8m2!3d-15.831108!4d-47.9241304"><i class="fas fa-map-marker-alt"></i> Ms Desenhos | Brasilia - Brasil</a>
-                </div>
-                 <div class="col ver">
-                <a>Ver certificado</a>
-                 </div>
-            </div>
-        </div>
-        <hr>
-        <div class="container-fluid top">
-            <h3> Agente Cultural do Distrito Federal </h3>
-            <div class="link">
-               <a  href="http://www.cultura.df.gov.br/">Agente Cultural credenciado pelo Governo Federal</a>
-            </div>
-            <div style="margin:0 auto;" class="row class">
-                <div class="col">
-                     <div class="col">
-                    <a  href="https://www.google.pt/maps/place/Secretaria+de+Estado+de+Cultura+e+Economia+Criativa+do+Distrito+Federal/@-15.7914499,-47.8799658,17z/data=!3m1!4b1!4m5!3m4!1s0x935a3b1dae1f4dd7:0xeb6e5ba4d223500a!8m2!3d-15.7914499!4d-47.8799658"><i class="fas fa-map-marker-alt"></i> FAC | Brasilia - Brasil</a>
-                </div>
-                </div>
-                 <div class="col ver">
-                <a>Ver certificado</a>
-                 </div>
-            </div>
-        </div>
-        <hr>
-         <label class="control-label">@rafael_axe</label>
-    </div>
-
-    <div class="tab-pane" id="networking">
-        <label class="control-label">EXPERIÊNCIAS DE TRABALHO</label>
-         <div class="container-fluid top">
-             <h3> Diretor de Arte | Design Gráfico </h3>
-             <div class="link">
-               <a  href="https://g3.com.br"> Agência G3 Comunicação - Brasília</a>
-            </div>
-             <h6>Responsável, ao lado do redator, por criar caminhos de comunicação e conceitos interessantes para campanhas publicitárias digitais e suas ramificações.</h6>
-         </div>
-
-         <div class="container-fluid top">
-             <h3> Diretor de Arte | Design Gráfico </h3>
-             <div class="link">
-               <a > Agência 71 Comunicação - Brasília</a>
-
-            </div>
-
-             <h6>Responsável por coordenar a equipe de criação, estudando a melhor forma de resolver a problemática trazida pelos diversos tipos de clientes.</h6>
-         </div>
-
-        <div class="container-fluid top">
-             <h3> Silk-Screen | Design Gráfico </h3>
-             <div class="link">
-               <a href="https://instagram.com/lojaexodus">Exodus Confecções de Roupas e Acessórios- Brasília</a>
-            </div>
-             <h6>Experiência incrível de integrar a arte digital em estampas criativas, sempre com o desafio de seguir um conceito já estabelecido pela marca. </h6>
-         </div>
-         <div class="container-fluid top">
-             <h3> Captação de Áudio em Filmes </h3>
-             <div class="link">
-               <a href="https://instagram.com/lojaexodus">Patrick de Jongh</a>
-            </div>
-             <h6>Gravação do Áudio direto em filmes, ao lado de Patrick de Jongh - engenheiro de som e produtor musical. Graduado em produção musical pelo Conservatório de Roterdam (Holanda) e pós-graduado em Engenharia de Áudio e Engenharia Acústica pelo SAE – de Londres (Inglaterra). </h6>
-
-             <label class="control-label">Filmes</label>
-               <div  class="row movie">
-  <div class="col">
-      <a role="button" href="https://www.imdb.com/title/tt1611807/?ref_=nm_flmg_snd_8"
-                       class="btn filme">
-      <h2>A Gruta - Filme Interativo (2008)</h2>
-  <p>46min | Horror, Thriller | 21 November 2008 (Brazil)</p>
-      </a>
-  </div>
-  <div class="col">
-      <a role="button" href="https://www.imdb.com/title/tt1723704/?ref_=nm_flmg_snd_7"
-                       class="btn filme">
-      <h2>A Janela (2010)</h2>
-  <p>10min | Short, Drama | August 2010 (USA)</p>
-      </a>
-  </div>
-   <div class="col">
-      <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_6"
-                       class="btn filme">
-      <h2>Um Assalto de Fé (2011)</h2>
-  <p>11h 36min | Comedy | 2 December 2011 (Brazil)</p>
-      </a>
-   </div></div>
-
-                   <div class="row movie ">
-                    <div class="col">
-      <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_5"
-                       class="btn filme">
-      <h2>Angélica Acorrentada (2012)</h2>
-  <p>11h 36min | Comedy | 2 December 2011 (Brazil)</p>
-      </a>
-  </div>
-                        <div class="col">
-      <a role="button" href="https://www.imdb.com/title/tt2189250/?ref_=nm_flmg_snd_4"
-                       class="btn filme">
-      <h2>Um ano novo danado de bom (2014)</h2>
-  <p>119min | Short, Fantasy (Brazil)</p>
-      </a>
-  </div>
-                        <div class="col">
-      <a role="button" href="http://portacurtas.org.br/filme/?name=senhoras9745"
-                       class="btn filme">
-      <h2>Senhoras (2010)</h2>
-  <p>10min | Ficção | (Brazil)</p>
-      </a>
-  </div> </div>
-                       <div class="row movie">
-                       <div class="col">
-      <a role="button" href="http://portacurtas.org.br/filme/?name=senhoras9745"
-                       class="btn filme">
-      <h2>Senhoras (2010)</h2>
-  <p>10min | Ficção | (Brazil)</p>
-      </a>
-  </div>
-                                           <div class="col">
-      <a role="button" href="https://souzaty.com/project/pedra-do-mal/"
-                       class="btn filme">
-      <h2>Pedra do Mal (2013)</h2>
-  <p>1h10min | Documentário | (Brazil)</p>
-      </a>
-  </div></div>
-
-</div >
-
- <div class="container-fluid top">
-             <h3> Coordenador de Equipe em Eventos </h3>
-             <div class="link">
-               <a href="https://instagram.com/lojaexodus">Produtor de Evento</a>
-            </div>
-     <h6>Basicamente, o organizador de eventos é aquele profissional responsável por planejar, sistematizar e produzir qualquer tipo de evento: conferências, palestras, feiras e jantares corporativos, dentre outras possibilidades.</h6>
-<div class="row movie">
-                       <div class="col">
-      <a role="button" href="https://www.detran.df.gov.br/acoes-educativas-de-transito/"
-                       class="btn filme">
-      <h2>Detran - DF</h2>
-  <p>Departamento de Trânsito do Distrito Federal</p>
-      </a>
-  </div>
-                                           <div class="col">
-      <a role="button" href="#"
-                       class="btn filme">
-      <h2>Prefeitura do Setor de Diversões Sul </h2>
-  <p>Governo de Brasília</p>
-      </a>
-  </div></div>
-     <hr>
-
- <label class="control-label">COMPETÊNCIAS</label>
- <h3>COMPETÊNCIAS de COMUNICAÇÃO</h3>
-<h6>Possuo forte habilidade de comunicação, conseguindo estabelecer ótima relação
-com meus colegas de trabalho, tenho experiência em me adaptar rapidamente a novos conhecimentos
-e instruções ou situações de imprevisto, acredito que trabalhar em equipe ajuda a alcançar um objetivo</h6>
-
- </div>
-
     </div>
 </div>
-          </div>
 
-    </div>
-  </div>
-
-  </body>
+</body>
 <script>
 
 </script>

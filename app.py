@@ -54,8 +54,6 @@ def memory_images(filename):
 @app.route("/", methods=['GET'])
 def home():
     files = os.listdir(UPLOAD_FOLDER)
-
-
     return render_template("teste.html", files=files)
 
 @app.route('/dashboard', methods=['GET', 'POST'])
@@ -76,10 +74,8 @@ def logout():
 @app.route('/login/', methods=['POST'])
 def login():
     error = ''
-
     try:
         c, conn = connection()
-        print('connect')
         if request.method == 'POST':
             email = request.form['email']
             print(email)
@@ -91,36 +87,31 @@ def login():
                             WHERE
                                email=%s""", [email])
             print(x)
-
             if int(x) > 0:
                 data = c.fetchone()[3]
                 print(data)
-
                 # if int(x) > 0:
                 if sha256_crypt.verify(request.form['password'], data):
                     session['logged_in'] = True
                     session['username'] = email
-                    flash("Bem-Vindo")
+                    # flash("Bem-Vindo")
                     return redirect(url_for('home'))
-
                 else:
-                    flash("SENHA INVALIDA")
+                    print("SENHA INVALIDA")
+                    return redirect(url_for('home'))
             if int(x) == 0:
                 email = request.form['email']
                 print(email)
-
                 password_admin = "figueiradafoz"
                 data = sha256_crypt.encrypt((str(password_admin)))
-
-
                 if sha256_crypt.verify(request.form['password'], data):
                     session['admin'] = True
                     session['email'] = email
-
                     return redirect(url_for('dashboard'))
                 else:
-                    flash("USUARIO NAO EXISTE, FACA CADASTRO ")
-
+                    print('')
+                    return redirect(url_for('home'))
+                    # flash("USUARIO NAO EXISTE, FACA CADASTRO ")
             # if int(x) > 0:
             #     myresult = c.fetchall()
             #     for x in myresult:
@@ -142,19 +133,13 @@ def login():
             #     c.close()
             #     flash("Bem Vindo " + nome)
             #     return redirect(url_for('home'))
-
-
-
             if request.form['email'] == "admin@admin.com" and request.form['password'] == "123456":
                 session['admin'] = True
                 session['email'] = email
-
                 return redirect(url_for('dashboard'))
-
-
         return render_template("teste.html", error=error)
     except Exception as e:
-        flash(e)
+        # flash(e)
         return render_template('teste.html', error=error)
 
 @app.route('/register/', methods=['GET', 'POST'])
@@ -488,7 +473,7 @@ def memory_game():
 def main ():
     app.secret_key = 'valeteDjLm'
     port = int(os.environ.get("PORT", 5002))
-    app.run (host="0.0.0.0", port=port)
+    app.run (host="0.0.0.0", port=port,debug=True)
 
 if __name__ == "__main__":
    main()
