@@ -4,12 +4,10 @@
     <list default="true" id="ae0ec06d-f7b3-4c3c-81f5-edb1dc7b4355" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/grafico.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/grafico.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/header.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_jobs.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/add_jobs.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/dashbox.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/dashbox.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/portifolio.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/portifolio.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/teste.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/teste.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -154,22 +152,22 @@
       <screen x="0" y="23" width="1440" height="846" />
     </state>
     <state x="276" y="48" key="CommitChangelistDialog2/0.23.1440.846@0.23.1440.846" timestamp="1581431968638" />
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom" timestamp="1587762240764">
+    <state width="1370" height="75" key="GridCell.Tab.0.bottom" timestamp="1587900252797">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1587762240764" />
-    <state width="1419" height="220" key="GridCell.Tab.0.center" timestamp="1587762240763">
+    <state width="1370" height="75" key="GridCell.Tab.0.bottom/0.23.1440.846@0.23.1440.846" timestamp="1587900252797" />
+    <state width="1370" height="75" key="GridCell.Tab.0.center" timestamp="1587900252797">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1587762240763" />
-    <state width="1419" height="220" key="GridCell.Tab.0.left" timestamp="1587762240762">
+    <state width="1370" height="75" key="GridCell.Tab.0.center/0.23.1440.846@0.23.1440.846" timestamp="1587900252797" />
+    <state width="1370" height="75" key="GridCell.Tab.0.left" timestamp="1587900252795">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1587762240762" />
-    <state width="1419" height="220" key="GridCell.Tab.0.right" timestamp="1587762240763">
+    <state width="1370" height="75" key="GridCell.Tab.0.left/0.23.1440.846@0.23.1440.846" timestamp="1587900252795" />
+    <state width="1370" height="75" key="GridCell.Tab.0.right" timestamp="1587900252797">
       <screen x="0" y="23" width="1440" height="846" />
     </state>
-    <state width="1419" height="220" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1587762240763" />
+    <state width="1370" height="75" key="GridCell.Tab.0.right/0.23.1440.846@0.23.1440.846" timestamp="1587900252797" />
     <state x="0" y="147" key="SettingsEditor" timestamp="1579209557258">
       <screen x="0" y="23" width="1440" height="846" />
     </state>

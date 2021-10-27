@@ -1,4 +1,3 @@
-
 {% extends "hadmin.html" %}
 {% block body %}
 <style>
@@ -623,6 +622,7 @@ height: 80px;}
 margin-top:-10px;
 margin-left:-10px;
 }
+
 </style>
 
 {% if session.admin %}
@@ -633,19 +633,20 @@ margin-left:-10px;
             <!--MESSAGE FLASK -->
             {%with messages = get_flashed_messages()%} {%if messages%} {% for message in messages %}
             <div class="alert alert-success alert-dismissable" role="alert">
-                <button type="button" class="close" data-dismiss="alert" aria-label ="close">
-                <span aria-hidden="true">&times;</span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="close">
+                    <span aria-hidden="true">&times;</span>
                 </button>
                 {{message}}
-            </div>{%endfor%} {%endif%} {%endwith%}
+            </div>
+            {%endfor%} {%endif%} {%endwith%}
             <button type="button" class="fixed" data-toggle="modal" data-target="#myModal">+ Add Novo</button>
-             <!-- TABLE -->
-            <table class="table" >{% for row in students %}
-               <tbody>
+            <!-- TABLE -->
+            <table class="table">{% for row in students %}
+                <tbody>
                 <tr>
-                     <!-- COLUNA FOTO -->
-                    <td id="pt" style="cursor: pointer; vertical-align: middle;" >
-                        <img  src="{{ url_for('memory_images', filename=row[8]) }}"   alt="Card image cap" >
+                    <!-- COLUNA FOTO -->
+                    <td id="pt" style="cursor: pointer; vertical-align: middle;">
+                        <img src="{{ url_for('memory_images', filename=row[8]) }}" alt="Card image cap">
                     </td>
                     <!-- COLUNA TITULO -->
                     <td>
@@ -670,151 +671,162 @@ margin-left:-10px;
                     <td style=" vertical-align: middle;">
                         <div style="margin:0 auto;" class="text_detail">
                             <div class="row taste">
-                                 <a href="/update_jobs/{{row.0}}"  data-toggle="modal" data-target="#modaledit{{row.0}}"><i class="fas fa-tools"></i></a>
-                                 <a href="/delete_jobs/{{ row.0 }}"  onclick="return confirm('Are You Sure For Delete?')"><i class="far fa-trash-alt"></i></a>
-                                 <a href="#"   class="tip" data-tip="modaltooltip{{row.0}}" data-placement="left" ><i class="fas fa-plus"></i></a>
+                                <a href="/update_jobs/{{row.0}}" data-toggle="modal"
+                                   data-target="#modaledit{{row.0}}"><i class="fas fa-tools"></i></a>
+                                <a href="/delete_jobs/{{ row.0 }}" onclick="return confirm('Are You Sure For Delete?')"><i
+                                        class="far fa-trash-alt"></i></a>
+                                <a href="#" class="tip" data-tip="modaltooltip{{row.0}}" data-placement="left"><i
+                                        class="fas fa-plus"></i></a>
                             </div>
                         </div>
                     </td>
                 </tr>
-               </tbody>{% endfor  %}
+                </tbody>
+                {% endfor %}
             </table>
-             <!-- end TABLE -->
+            <!-- end TABLE -->
         </div>
     </div>
 </div>
 
 
-
- <!-- MODAL ADD JOBS -->
+<!-- MODAL ADD JOBS -->
 <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <div  id="modallogin" class="modal-content">
-                 <div id="modalloginbody" class="modal-body">
-                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
-                     <div class="login-card">
-                         <h2 class="job">ADD JOB</h2>
-                         <form id="pay" action="{{ url_for('insert_jobs') }}" method="POST" enctype="multipart/form-data">
-                             <!-- CLIENTE -->
-                             <div class="group">
-                                 <input type="text" value="{{request.form.cliente}}" name="cliente" autocomplete="off">
-                                 <span class="highlight"></span>
-                                 <span class="bar"></span>
-                                 <label>CLIENTE</label>
-                             </div>
-                             <!-- NOME -->
-                             <div class="group">
-                                 <input type="text" value="{{request.form.nome}}" name="nome" autocomplete="off">
-                                 <span class="highlight"></span>
-                                 <span class="bar"></span>
-                                 <label>NOME DO PROJETO</label>
-                             </div>
-                             <!-- DESCRICAO -->
-                             <div class="group">
-                                 <input type="text" value="{{request.form.descricao}}" name="descricao" autocomplete="off">
-                                 <span class="highlight"></span>
-                                 <span class="bar"></span>
-                                 <label>DESCRICAO</label>
-                             </div>
-                             <!-- LINGUAGEM -->
-                             <div class="group">
-                                 <input type="text" value="{{request.form.linguagem}}" name="linguagem" autocomplete="off">
-                                 <span class="highlight"></span>
-                                 <span class="bar"></span>
-                                 <label>LINGUAGEM USADA</label>
-                             </div>
-                             <!-- DATAS -->
-                             <div class="row">
-                                 <div class="col">
-                                     <div class="group">
-                                         <input onfocus="(this.type='date')" value="{{request.form.entrada}}" name="entrada" class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
-                                     </div>
-                                 </div>
-                                 <div class="col">
-                                     <div class="group">
-                                         <input onfocus="(this.type='date')" value="{{request.form.prazo}}" name="prazo" autocomplete="off" class="js-form-control" placeholder="PRAZO LIMITE"></div>
-                                 </div>
-                             </div>
-                             <!-- LINK -->
-                             <div class="group">
-                                 <div class="input-group mb-3">
-                                     <div class="input-group-prepend">
-                                         <span class="input-group-text" id="basic-addon3">https://</span>
-                                     </div>
-                                     <input type="text" class="form-control" id="basic-url" autocomplete="off" aria-describedby="basic-addon3" value="{{request.form.link}}" name="link" placeholder="Link para acesso">
-                                 </div>
-                             </div>
-                             <!-- STATUS -->
-                             <div class="group">
-                                  <div class="row">
-                                        <div class="col-md-auto">
-                                            <div class="job2">
-                                                STATUS:
-                                            </div>
-                                        </div>
-                                      <div class="col">
-                                          <div class="container-fluid flex">
-                                              <select style="z-index:-9999;" class="select" id="status_insert">
-                                                  <option selected>INSERIR STATUS...</option>
-                                                  <option value="ENTRADA">ENTRADA</option>
-                                                  <option value="REVISÃO">EM REVISÃO</option>
-                                                  <option value="APROVADO">APROVADO</option>
-                                              </select>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                             <!-- CATEGORIA -->
-                             <div id="categoria_add" class="group">
-                                  <div class="row">
-                                        <div class="col-md-auto">
-                                            <div class="job2">
-                                                <a>CATEGORIA:</a>
-                                            </div>
-                                        </div>
-                                      <div class="col">
-                                          <div class="container-fluid flex">
-                                              <select style="z-index:-9999;" class="select" id="categorias_insert">
-                                                  <option selected>SELECIONE...</option>
-                                                  <option value="WEB">WEB</option>
-                                                  <option value="FILME">FILME</option>
-                                                  <option value="AUDIO">AUDIO</option>
-                                                  <option value="LOGOMARCA">LOGOMARCA</option>
-                                                  <option value="ESTAMPAS">ESTAMPAS</option>
-                                                  <option value="BOTS">BOTS</option>
-                                                  <option value="PUBLICIDADE">PUBLICIDADE</option>
-                                                  <option value="PYTHON">PYTHON</option>
-                                              </select>
-                                          </div>
-                                      </div>
-                                  </div>
-                             </div>
-                             <!-- FOTO -->
-                             <div class="group ">
-                                 <div class="container-fluid anexo">
-                              <!-- filename to display to the user -->
-                                 <!-- Hide this from the users view with css display:none; -->
-                                 <input style="display:none; " id="file-type" type="file" size="4" name="file"/>
-                                 <!-- Style this button with type image or css whatever you wish -->
-                                 <span id="images"><i class="fas fa-images"></i></span><input id="browse-click" type="button" class="button" value="ANEXAR ARQUIVO"/>
-                                 <!-- submit button -->
-                                     <p id="file-name" class="margin-10 bold-10"></p>
-                                 </div>
-                             </div>
-                             <!-- HIDDEN INPUTS -->
-                             <div id="hidden_tags" class="hidden_tags"></div>
-                             <!-- SUBMIT -->
-                             <div class="form-group">
-                                 <button class="btn" id="submit" type="submit">REGISTRAR NOVO JOB</button>
-                                 <button type="button" id="fechar_modal" class="btn btn-default" data-dismiss="modal"><a id="xar">FECHAR  X</a></button>
-                             </div>
-                         </form>
-                     </div>
-                 </div>
+    <div class="modal-dialog">
+        <div id="modallogin" class="modal-content">
+            <div id="modalloginbody" class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"></button>
+                <div class="login-card">
+                    <h2 class="job">ADD JOB</h2>
+                    <form id="pay" action="{{ url_for('insert_jobs') }}" method="POST" enctype="multipart/form-data">
+                        <!-- CLIENTE -->
+                        <div class="group">
+                            <input type="text" value="{{request.form.cliente}}" name="cliente" autocomplete="off">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>CLIENTE</label>
+                        </div>
+                        <!-- NOME -->
+                        <div class="group">
+                            <input type="text" value="{{request.form.nome}}" name="nome" autocomplete="off">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>NOME DO PROJETO</label>
+                        </div>
+                        <!-- DESCRICAO -->
+                        <div class="group">
+                            <input type="text" value="{{request.form.descricao}}" name="descricao" autocomplete="off">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>DESCRICAO</label>
+                        </div>
+                        <!-- LINGUAGEM -->
+                        <div class="group">
+                            <input type="text" value="{{request.form.linguagem}}" name="linguagem" autocomplete="off">
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label>LINGUAGEM USADA</label>
+                        </div>
+                        <!-- DATAS -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="group">
+                                    <input onfocus="(this.type='date')" value="{{request.form.entrada}}" name="entrada"
+                                           class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="group">
+                                    <input onfocus="(this.type='date')" value="{{request.form.prazo}}" name="prazo"
+                                           autocomplete="off" class="js-form-control" placeholder="PRAZO LIMITE"></div>
+                            </div>
+                        </div>
+                        <!-- LINK -->
+                        <div class="group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon3">https://</span>
+                                </div>
+                                <input type="text" class="form-control" id="basic-url" autocomplete="off"
+                                       aria-describedby="basic-addon3" value="{{request.form.link}}" name="link"
+                                       placeholder="Link para acesso">
+                            </div>
+                        </div>
+                        <!-- STATUS -->
+                        <div class="group">
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <div class="job2">
+                                        STATUS:
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="container-fluid flex">
+                                        <select style="z-index:-9999;" class="select" id="status_insert">
+                                            <option selected>INSERIR STATUS...</option>
+                                            <option value="ENTRADA">ENTRADA</option>
+                                            <option value="REVISÃO">EM REVISÃO</option>
+                                            <option value="APROVADO">APROVADO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- CATEGORIA -->
+                        <div id="categoria_add" class="group">
+                            <div class="row">
+                                <div class="col-md-auto">
+                                    <div class="job2">
+                                        <a>CATEGORIA:</a>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="container-fluid flex">
+                                        <select style="z-index:-9999;" class="select" id="categorias_insert">
+                                            <option selected>SELECIONE...</option>
+                                            <option value="WEB">WEB</option>
+                                            <option value="FILME">FILME</option>
+                                            <option value="AUDIO">AUDIO</option>
+                                            <option value="LOGOMARCA">LOGOMARCA</option>
+                                            <option value="ESTAMPAS">ESTAMPAS</option>
+                                            <option value="BOTS">BOTS</option>
+                                            <option value="PUBLICIDADE">PUBLICIDADE</option>
+                                            <option value="PYTHON">PYTHON</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- FOTO -->
+                        <div class="group ">
+                            <div class="container-fluid anexo">
+                                <!-- filename to display to the user -->
+                                <!-- Hide this from the users view with css display:none; -->
+                                <input style="display:none; " id="file-type" type="file" size="4" name="file"/>
+                                <!-- Style this button with type image or css whatever you wish -->
+                                <span id="images"><i class="fas fa-images"></i></span><input id="browse-click"
+                                                                                             type="button"
+                                                                                             class="button"
+                                                                                             value="ANEXAR ARQUIVO"/>
+                                <!-- submit button -->
+                                <p id="file-name" class="margin-10 bold-10"></p>
+                            </div>
+                        </div>
+                        <!-- HIDDEN INPUTS -->
+                        <div id="hidden_tags" class="hidden_tags"></div>
+                        <!-- SUBMIT -->
+                        <div class="form-group">
+                            <button class="btn" id="submit" type="submit">REGISTRAR NOVO JOB</button>
+                            <button type="button" id="fechar_modal" class="btn btn-default" data-dismiss="modal"><a
+                                    id="xar">FECHAR X</a></button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
-      </div>
- <!-- MODAL EDIT JOBS -->
+    </div>
+</div>
+<!-- MODAL EDIT JOBS -->
 {% for row in students %}
 <div id="modaledit{{row.0}}" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -825,7 +837,7 @@ margin-left:-10px;
                     <input type="hidden" name="id" value="{{row[0]}}">
                     <!-- CLIENTE -->
                     <div class="group">
-                        <input type="text" name="cliente"  autocomplete="off" value="{{row.1}}">
+                        <input type="text" name="cliente" autocomplete="off" value="{{row.1}}">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>CLIENTE</label>
@@ -833,112 +845,109 @@ margin-left:-10px;
                     </div>
                     <!-- NOME -->
                     <div class="group">
-                        <input   type="text" name="nome" autocomplete="off" value="{{row.2}}">
+                        <input type="text" name="nome" autocomplete="off" value="{{row.2}}">
                         <span class="highlight"></span>
                         <span class="bar"></span>
                         <label>Nome do Projeto</label>
                     </div>
                     <!-- DESCRICAO -->
                     <div class="group">
-                        <input type="text" name="descricao" autocomplete="off" value="{{row.3}}" >
+                        <input type="text" name="descricao" autocomplete="off" value="{{row.3}}">
                         <span class="highlight"></span>
                         <span class="bar"></span>
-                        <label >Descrição do Projeto</label>
+                        <label>Descrição do Projeto</label>
                     </div>
                     <!-- LINGUAGEM -->
                     <div class="group">
-                        <input type="text" name="linguagem" autocomplete="off" value="{{row.4}}" >
+                        <input type="text" name="linguagem" autocomplete="off" value="{{row.4}}">
                         <span class="highlight"></span>
                         <span class="bar"></span>
-                        <label >Linguagem Usada</label>
+                        <label>Linguagem Usada</label>
                     </div>
                     <!-- DATAS -->
                     <div class="row">
                         <div class="col">
                             <div class="group">
-                                <input onfocus="(this.type='date')" value="{{row.5}}" name="entrada" class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
-                                <label >Data de Entrada</label>
+                                <input onfocus="(this.type='date')" value="{{row.5}}" name="entrada"
+                                       class="js-form-control" autocomplete="off" placeholder="DATA ENTRADA">
+                                <label>Data de Entrada</label>
                             </div>
                         </div>
                         <div class="col">
                             <div class="group">
-                                <input onfocus="(this.type='date')" value="{{row.6}}" name="prazo" class="js-form-control" autocomplete="off" placeholder="PRAZO LIMITE">
-                                <label >Data de Entrada</label>
+                                <input onfocus="(this.type='date')" value="{{row.6}}" name="prazo"
+                                       class="js-form-control" autocomplete="off" placeholder="PRAZO LIMITE">
+                                <label>Data de Entrada</label>
                             </div>
-                             </div>
+                        </div>
                     </div>
-                     <!-- LINK -->
+                    <!-- LINK -->
                     <div id="link-edit" class="group">
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
                                 <span class="input-group-text" id="basic-addon4">https://</span>
                             </div>
-                            <input type="text" class="form-control" id="basic-url2" autocomplete="off"  value="{{row.7}}" aria-describedby="basic-addon3" name="link" placeholder="Link para acesso">
+                            <input type="text" class="form-control" id="basic-url2" autocomplete="off" value="{{row.7}}"
+                                   aria-describedby="basic-addon3" name="link" placeholder="Link para acesso">
                         </div>
                     </div>
-
-
-
                     <div class="row">
                         <!-- STATUS -->
                         <div class="col">
                             <div class="group">
                                 <input type="text" name="status" autocomplete="off" value="{{row.11}}">
-                                 <label >STATUS</label>
+                                <label>STATUS</label>
                             </div>
                         </div>
                         <!-- CATEGORIA -->
                         <div class="col">
                             <div class="group">
-                               <input type="text" name="categoria" autocomplete="off" value="{{row.10}}">
-                                   <label>CATEGORIA</label>
+                                <input type="text" name="categoria" autocomplete="off" value="{{row.10}}">
+                                <label>CATEGORIA</label>
                             </div>
-                             </div>
+                        </div>
                     </div>
-
                     <!-- FOTO -->
-                      <div class="group">
-        <label for="file">Anexar Foto : </label>
- <input type="file" id="file" name="file" multiple>
-</div>
-
+                    <div class="group">
+                        <label for="file">Anexar Foto : </label>
+                        <input type="file" id="file" name="file" multiple>
+                    </div>
                     <!-- SUBMIT -->
                     <div class="form-group">
-                        <button  id="submit2" class="btn submit" type="submit">Editar Informacoes</button>
+                        <button id="submit2" class="btn submit" type="submit">Editar Informacoes</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
- <!-- MODAL TOOLTIPS -->
+<!-- MODAL TOOLTIPS -->
 <div id="modaltooltip{{row.0}}" class="modal fade teste" role="dialog">
-                    <div id="tooltip" >
-                        <ul class="list-unstyled">
-                            <li>ENTRADA : <strong>{{row[5]}}</strong></li>
-                            <li>PRAZO: <strong>{{row[6]}}</strong></li>
-                            <li>CATEGORIA: <strong>{{row[10]}}</strong></li>
-                            <li>ATUALIZADO EM: <strong>{{row[9]}}</strong></li>
+    <div id="tooltip">
+        <ul class="list-unstyled">
+            <li>ENTRADA : <strong>{{row[5]}}</strong></li>
+            <li>PRAZO: <strong>{{row[6]}}</strong></li>
+            <li>CATEGORIA: <strong>{{row[10]}}</strong></li>
+            <li>ATUALIZADO EM: <strong>{{row[9]}}</strong></li>
 
-                        </ul>
-                     </div>
-                </div>
+        </ul>
+    </div>
+</div>
 {% endfor  %}
 
 <link rel="stylesheet" href=
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
-    </script>
-    <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
-    </script>
-    <script src=
-"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
-    </script>
-        <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+        "https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src=
+                "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+</script>
+<script src=
+                "https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+</script>
+<script src=
+                "https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+</script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 
 <script>
@@ -1025,6 +1034,7 @@ $('select').each(function(){
 
     });
 });
+
 
 
 

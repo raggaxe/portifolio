@@ -8,7 +8,7 @@ from datetime import datetime
 from werkzeug.utils import secure_filename
 import os
 import json
-
+import warnings
 
 app = Flask(__name__)
 
@@ -16,16 +16,91 @@ dia = str(datetime.now().strftime("%d-%m-%Y"))
 
 
 UPLOAD_FOLDER = "./static/uploads"
-MEMORY_GAME_FOLDER = "/Users/rafael/Desktop/Projetos Python/Portifolio Rafael/static/memorygame"
+PORTIFOLIO_FOLDER = "./static/portifolio_img"
+# MEMORY_GAME_FOLDER = "/Users/rafael/Desktop/Projetos Python/Portifolio Rafael/static/memorygame"
 ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
+
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['PORTIFOLIO_FOLDER'] = PORTIFOLIO_FOLDER
+
+
+
+def InsertSql(myDict,table):
+    try:
+        print('INSERINDO AGENDA....')
+        c, conn = connection()
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore')
+            columns = ', '.join("`" + str(x).replace('/', '_') + "`" for x in myDict.keys())
+            values = ', '.join("'" + str(x) + "'" for x in myDict.values())
+            c.execute('SET @@auto_increment_increment=1;')
+            conn.commit()
+            sql = "INSERT INTO %s ( %s ) VALUES ( %s );" % (table, columns, values)
+            c.execute(sql)
+            conn.commit()
+        print(f'INSERIDO : { myDict} {{status :: OK}} ')
+    except Exception as e:
+        print(f' ERROR:       {str(e)}')
+        return (str(e))
+def SelectSql(table, coluna,value):
+    try:
+        c,conn = connection()
+        x = c.execute(f"""SELECT * FROM {table} WHERE {coluna}= '{value}'""")
+        if int(x) > 0:
+            myresult = c.fetchall()
+            return myresult
+        if int(x) == 0:
+            return False
+    except Exception as e:
+        print(f' ERROR:       {str(e)}')
+        return (str(e))
+
+def UpdateQuerySql(mydict,table,item,modifica):
+    print(' ATUALIZANDO DADOS .... ')
+    c, conn = connection()
+    for k in mydict:
+        coluna = (k)
+        value = (mydict[k])
+        sql = (f"""UPDATE `{table}` SET `{coluna}` = '{value}' WHERE (`{item}` = '{modifica}');""")
+        c.execute(sql)
+        conn.commit()
+        conn.close
+    print(f'--->>> ATUALIZAÇÃO da TABELA :{table}  == > DATA {mydict}{{status :: OK}} .... ')
+
+
+def Select_all(table):
+    try:
+        c,conn = connection()
+        x = c.execute(f"""SELECT * FROM {table}""")
+        if int(x) > 0:
+            myresult = c.fetchall()
+            return myresult
+        if int(x) == 0:
+            return False
+    except Exception as e:
+        print(f' ERROR:       {str(e)}')
+        return (str(e))
+
+
+def delete_all_rows(table):
+    try:
+        print(f'DELETENDO ITENS DA TABELA {table}....')
+        c, conn = connection()
+        sql = "DELETE FROM %s ;" % (table)
+        c.execute(sql)
+        conn.commit()
+        print('TODAS AS ROWS FORAM DELETADAS {{status :: OK}} ')
+    except Exception as e:
+        print(f' ERROR:       {str(e)}')
+        return (str(e))
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MEMORY_GAME_FOLDER'] = MEMORY_GAME_FOLDER
+
 def login_required(f):
     @wraps(f)
     def wrap(*args, **kwargs):
@@ -47,96 +122,69 @@ def uploaded_file(filename):
 
 @app.route('/transfer_images/<filename>', methods=['GET', 'POST'])
 def memory_images(filename):
-
-    return send_from_directory(app.config['MEMORY_GAME_FOLDER'],
+    return send_from_directory(app.config['PORTIFOLIO_FOLDER'],
                                filename)
 
 @app.route("/", methods=['GET'])
 def home():
     files = os.listdir(UPLOAD_FOLDER)
-    return render_template("teste.html", files=files)
+    jobs = Select_all('portifolio')
+    print(jobs)
+
+
+    return render_template("teste.html", files=jobs)
 
 @app.route('/dashboard', methods=['GET', 'POST'])
 def dashboard():
-    try:
-        if request.method == 'GET':
-            return render_template('dashboard.html')
-    except Exception as e:
-        return (str(e))
+    jobs = Select_all('portifolio')
+    print(jobs)
+    return render_template('dashboard.html')
+
 
 @app.route('/logout/')
 @login_required
 def logout():
     session.clear()
-    flash('Voce esta saindo do APP! Obrigado')
+    # flash('Voce esta saindo do APP! Obrigado')
     return redirect(url_for('home'))
 
 @app.route('/login/', methods=['POST'])
 def login():
     error = ''
     try:
-        c, conn = connection()
         if request.method == 'POST':
             email = request.form['email']
-            print(email)
-            x = c.execute("""
-                            SELECT
-                                *
-                            FROM
-                                usuarios
-                            WHERE
-                               email=%s""", [email])
-            print(x)
-            if int(x) > 0:
-                data = c.fetchone()[3]
-                print(data)
-                # if int(x) > 0:
-                if sha256_crypt.verify(request.form['password'], data):
+            # print(email)
+            check_user = SelectSql('usuarios', 'email', email)
+            # print(check_user)
+            if check_user == False:
+                print("Login ou Senha Errada, confira e tenta novamente", 'erro')
+                return redirect(url_for('index'))
+            else:
+                user = check_user[0]
+                email = user[2]
+                id = user[0]
+                check_password = user[3]
+                if email == 'admin@admin.com' and request.form['password'] == '12345':
+                    print('admin area')
                     session['logged_in'] = True
-                    session['username'] = email
-                    # flash("Bem-Vindo")
-                    return redirect(url_for('home'))
-                else:
-                    print("SENHA INVALIDA")
-                    return redirect(url_for('home'))
-            if int(x) == 0:
-                email = request.form['email']
-                print(email)
-                password_admin = "figueiradafoz"
-                data = sha256_crypt.encrypt((str(password_admin)))
-                if sha256_crypt.verify(request.form['password'], data):
-                    session['admin'] = True
                     session['email'] = email
+                    session['ID_User'] = id
+                    session['admin'] = True
                     return redirect(url_for('dashboard'))
                 else:
-                    print('')
-                    return redirect(url_for('home'))
-                    # flash("USUARIO NAO EXISTE, FACA CADASTRO ")
-            # if int(x) > 0:
-            #     myresult = c.fetchall()
-            #     for x in myresult:
-            #         id_usuario = x[0]
-            #         nome = x[1]
-            #         senha = x[2]
-            #         email = x[3]
-            #         pontos = x[7]
-            #     print(myresult)
-            #     session['logged_in'] = True
-            #     # session['id_user'] = id_user
-            #     session['username'] = nome
-            #     # session['endereco'] = endereco
-            #     # session['telefone'] = telefone
-            #     session['email'] = email
-            #     session['user_pontos'] = pontos
-            #     session['notificacoes'] = 0
-            #
-            #     c.close()
-            #     flash("Bem Vindo " + nome)
-            #     return redirect(url_for('home'))
-            if request.form['email'] == "admin@admin.com" and request.form['password'] == "123456":
-                session['admin'] = True
-                session['email'] = email
-                return redirect(url_for('dashboard'))
+                    if sha256_crypt.verify(request.form['password'], check_password):
+                        session['logged_in'] = True
+                        session['email'] = email
+                        session['ID_User'] = id
+
+                        return redirect(url_for('home'))
+
+                    else:
+                        print('senha erro')
+                        # flash("Login ou Senha Errada, confira e tenta novamente", 'erro')
+                        return redirect(url_for('home'))
+
         return render_template("teste.html", error=error)
     except Exception as e:
         # flash(e)
@@ -220,6 +268,7 @@ def add_jobs():
     return render_template('add_jobs.html', students=jobs)
 
 @app.route('/insert_jobs', methods = ['POST'])
+
 def insert_jobs():
 
     if request.method == "POST":
@@ -251,7 +300,7 @@ CLIENTE:{cliente}""")
 
         if f and allowed_file(f.filename):
             filename = secure_filename(f.filename)
-            f.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            f.save(os.path.join(app.config['PORTIFOLIO_FOLDER'], filename))
 
 
         c.execute("""
@@ -473,7 +522,7 @@ def memory_game():
 def main ():
     app.secret_key = 'valeteDjLm'
     port = int(os.environ.get("PORT", 5002))
-    app.run (host="0.0.0.0", port=port,debug=True)
+    app.run (host="0.0.0.0", port=port)
 
 if __name__ == "__main__":
    main()

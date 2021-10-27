@@ -288,8 +288,6 @@ height:auto;
 
 }
 
-
-
 }
 
 
@@ -318,6 +316,11 @@ list-style-type:none;}
 width: 100%;
 -webkit-box-shadow: 0px 11px 15px -8px rgba(0,0,0,0.69);
 box-shadow: 0px 11px 15px -8px rgba(0,0,0,0.69);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nto img:hover {opacity: 0.7;}
 }
 
 
@@ -337,6 +340,85 @@ display: flex;
 }
 
 
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/* Modal Content (image) */
+.modal-content {
+  margin: 30px auto;
+  display: block;
+  width: 80%;
+  max-width: 550px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+
+}
+
+/* Add Animation */
+.modal-content, #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@-webkit-keyframes zoom {
+  from {-webkit-transform:scale(0)}
+  to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: fixed;
+  top: 80px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
 </style>
 	<section class="section-white">
         <div id="portifolio" class="container-fluid">
@@ -352,15 +434,27 @@ display: flex;
                         {% for file in files %}
                         <div class="nto col-md-4">
                         <div id="hidden_box" class="hidden_box">
-                            <img src="{{ url_for('uploaded_file', filename=file) }}" alt="sq-sample26"/>
+                            <img src="{{ url_for('memory_images', filename=file[8]) }}" alt="Card image cap" id="{{file.0}}" onclick="myFoto(this.id)">
                         </div>
+                            <!-- The Modal -->
+                            <div id="myModal_{{file.0}}" class="modal">
+                                <span class="close" id="close_{{file.0}}" onclick="myClose(this.id)">&times;</span>
+                                <div style="color:#fff">
+                                <h1>{{file.1}}</h1>
+                                </div>
+                                <img class="modal-content" src="{{ url_for('memory_images', filename=file[8]) }}">
+                                <div id="caption">
+
+                                    <h5>{{file.2}}</h5>
+                                    <p>{{file.3}}</p>
+
+                                </div>
                             </div>
+                        </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
-
-
 
             <h2>SITES / WEB DEVELOPER </h2>
             <ul class="nav nav-tabs justify-content-center mb-3 " id="pills-tab2" role="tablist">
@@ -397,8 +491,6 @@ display: flex;
                 </div>
             </div>
 
-
-
             <div id="downpage_2">
                 <a>
                     <i class="fas fa-angle-double-down"></i>
@@ -411,6 +503,21 @@ display: flex;
 <script type=text/javascript>
 
 
+    function myFoto(this_id) {
+    var id = this_id;
+    var modal = document.getElementById("myModal_"+id);
+    modal.style.display = "block";
+}
+
+
+
+
+function myClose(this_id) {
+
+var id = this_id.replace('close','myModal');
+var modal = document.getElementById(id);
+modal.style.display = "none";
+}
 
 
 
