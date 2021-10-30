@@ -1,66 +1,45 @@
 {% extends "header.html" %}
 
 {% block body %}
-<style>
 
-
-
-
-
-
-    section {
-     display: block;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-   height:100vh;
-    width: 100vw;
-
-
-  /* Scroll Snap */
-  scroll-snap-align: center;
-
-}
-
-</style>
-<div class="primeiro">
-{% include 'home.html' %}
-{% include 'profile.html' %}
+<form id="myFormID"  action="/conferencia-email/" style="padding-top:200px;">
+    <div class="form-check">
+  <input class="form-check-input" type="checkbox" value="http://www.teste.com.br/1" name="aula1" id="flexCheckDefault">
+  <label class="form-check-label" for="flexCheckDefault">
+    Default checkbox
+  </label>
 </div>
-<div class="terceiro">
-{% include 'portifolio.html' %}
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="http://www.teste.com.br/2" name="aula2" id="flexCheckChecked" checked>
+  <label class="form-check-label" for="flexCheckChecked">
+    Checked checkbox
+  </label>
+    <input type="submit" id="formid" value="MANDAR">
 </div>
-<div class="quarto">
-{% include 'contact.html' %}
-</div>
+
+
+</form>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script>
-$("#downpage_1").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".segundo").offset().top},
-        'slow');
-});
 
-
-$("#downpage").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".terceiro").offset().top},
-        'slow');
-});
-
-$("#downpage_2").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".quarto").offset().top},
-        'slow');
-});
-
-$("#downpage_3").click(function() {
-    $('html,body').animate({
-        scrollTop: $(".primeiro").offset().top},
-        'slow');
+$("#myFormID").submit(function(e) {
+    e.preventDefault(); // prevent actual form submit
+    var form = $(this);
+    var url = form.attr('action'); //get submit url [replace url here if desired]
+    $.ajax({
+         type: "POST",
+         url: url,
+         data: form.serialize(), // serializes form input
+         success: function(data){
+             console.log(data);
+         }
+    });
 });
 
 
 </script>
+
 {% endblock %}
 
 

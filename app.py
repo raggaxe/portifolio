@@ -1,5 +1,5 @@
 from flask import Flask, session, Response
-from flask import request, render_template, url_for, redirect, flash, send_from_directory
+from flask import request, render_template, url_for, redirect, flash, send_from_directory,make_response,jsonify
 from dbconnect import connection
 from functools import wraps
 from passlib.hash import sha256_crypt
@@ -111,14 +111,13 @@ def login_required(f):
             return redirect(url_for('login'))
     return wrap
 
-@app.route('/transfer/<filename>', methods=['GET', 'POST'])
-def uploaded_file(filename):
-    if filename == '.DS_Store':
-        return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               'cartaz_1.jpg')
-    else:
-        return send_from_directory(app.config['UPLOAD_FOLDER'],
-                               filename)
+
+
+
+
+
+
+
 
 @app.route('/transfer_images/<filename>', methods=['GET', 'POST'])
 def memory_images(filename):
@@ -519,10 +518,33 @@ def memory_game():
 
 
 
+@app.route("/conferencia-teste/", methods=['GET', 'POST'])
+def teste():
+    return render_template("teste.html")
+
+
+@app.route("/conferencia-email/", methods=['GET', 'POST'])
+def prepara_email():
+    if request.method == 'POST':
+        print(request.form)
+        links = {}
+        for aula in request.form:
+            print(aula)
+            if aula == 'aula1':
+                links.update({aula:''})
+
+
+
+        return make_response(jsonify({'resp': 'USUÁRIO JÁ ESTÁ CADASTRADO NA PLATAFORMA'}), 200)
+
+
+
+
 def main ():
     app.secret_key = 'valeteDjLm'
     port = int(os.environ.get("PORT", 5002))
     app.run (host="0.0.0.0", port=port)
+
 
 if __name__ == "__main__":
    main()
